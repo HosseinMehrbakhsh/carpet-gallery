@@ -3,8 +3,12 @@
     padding: 0;
 }
 
+body{
+    height: 10000px;
+}
+
 :root {
-    --text-color: #29231E;
+    --text-color: hsl(27, 60%, 20%);
     --primary-background: #F7F3EB;
     --secondary-background: #EFE7D8;
     --gold: #B88A43;
@@ -32,11 +36,34 @@ body {
     color: #B88A43;
 }
 
+.line{
+    height: 1px;
+    width: 100%;
+    border-top: 1px solid var(--gold);
+}
+
+.gold_btn{
+    
+    text-decoration: none;
+    color: var(--primary-background);
+    background-color: var(--gold);
+    padding: 15px 20px;
+    border-radius: 7px;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition-duration: 0.3s;
+}
+
+.gold_btn:hover{
+    background-color: hsl(36, 47%, 35%);
+    color: var(--secondary-background);
+}
 
 /* navbar */
 .search_box {
     border: 1px solid hsl(0, 0%, 80%);
-    /* border-color: hsl(0, 0%, 80%); */
     height: 50px;
     width: 300px;
     border-radius: 20px;
@@ -71,4 +98,19 @@ body {
 
 .extra_navlinks:hover {
     color: var(--text-color);
+}
+
+
+
+/* hero */
+.hero{
+    text-align: center;
+    height: 87vh;
+    background-image: url(/assets/imgs/hero.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.hero_title{
+    font-size: 50px;
 }
