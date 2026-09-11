@@ -1,0 +1,14 @@
+    <!-- special carpets -->
+    <section class="special_carpet">
+        <div class="container">
+            <div class="special_head">
+            </div>
+
+            <div class="special_products"></div>
+
+            <a href="" class="gold_btn shadow">
+                <span> مشاهده همه فرش ها</span>
+                <i class="bi bi-chevron-left d-flex align-items-center fs-6 ps-4"></i>
+            </a>
+        </div>
+    </section>
