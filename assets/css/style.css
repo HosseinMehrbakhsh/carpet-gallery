@@ -147,3 +147,18 @@ body {
     color: var(--text-color);
     background-color: hsl(40, 43%, 99%);
 }
+
+
+/* select with size */
+.select_size_item {
+    color: var(--text-color);
+    text-decoration: none;
+    border: 2px solid rgba(187, 139, 68, 0.15);
+    border-radius: 8px;
+    transition-duration: 0.3s;
+}
+
+.select_size_item:hover {
+    border-color: var(--gold);
+    color: var(--text-color);
+}
