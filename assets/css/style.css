@@ -10,7 +10,8 @@ body {
 :root {
     --text-color: hsl(27, 60%, 20%);
     --primary-background: #F7F3EB;
-    --secondary-background: hsl(39, 42%, 97%);
+    --secondary-background: hsl(40, 43%, 91%);
+    --hover-background: hsl(39, 42%, 97%);
     --gold: #B88A43;
 }
 
@@ -83,7 +84,7 @@ body {
 }
 
 .search_btn:focus {
-    background-color: var(--secondary-background);
+    background-color: var(--hover-background);
     outline: 1px solid var(--gold);
     border: 1px solid hsl(0, 0%, 80%);
     border-right: 0;
@@ -91,7 +92,7 @@ body {
 
 .search_btn:hover {
     border-color: hsl(0, 0%, 80%);
-    background-color: var(--secondary-background) !important;
+    background-color: var(--hover-background) !important;
 }
 
 .extra_navlinks {
@@ -129,7 +130,7 @@ body {
     border: 2px solid white;
 }
 
-.about_btn {
+.outline_gold_btn {
     text-decoration: none;
     color: var(--text-color);
     background-color: var(--primary-background);
@@ -143,7 +144,7 @@ body {
     transition-duration: 0.3s;
 }
 
-.about_btn:hover {
+.outline_gold_btn:hover {
     color: var(--text-color);
     background-color: hsl(40, 43%, 99%);
 }
@@ -178,7 +179,7 @@ body {
 .product_card:hover {
     border-color: var(--gold);
     color: var(--text-color);
-    background-color: var(--secondary-background);
+    background-color: var(--hover-background);
 }
 
 .product_img_container {
@@ -213,3 +214,25 @@ body {
     background-color: rgb(247, 243, 235, 0.9);
 }
 
+
+.carpet_features {
+    background-color: var(--secondary-background);
+    border-radius: 8px;
+    border: 2px solid hsl(40, 43%, 88%);
+}
+
+
+.carpet_features .col-3:not(:last-child) .carpet_feature {
+    border-left: 2px solid hsl(40, 43%, 80%);
+}
+
+.carpet_cta {
+    width: 100%;
+    background-color: var(--secondary-background);
+    border-radius: 8px;
+    border: 2px solid hsl(40, 43%, 88%);
+}
+
+.telephone_icon {
+    font-size: 80px;
+}
