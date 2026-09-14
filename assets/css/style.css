@@ -7,6 +7,7 @@
     --text-color: hsl(27, 60%, 20%);
     --primary-background: #F7F3EB;
     --secondary-background: hsl(40, 43%, 91%);
+    --dark-background:#2F281E;
     --hover-background: hsl(39, 42%, 97%);
     --gold: #B88A43;
 }
@@ -30,9 +31,6 @@ body {
     color: var(--text-color);
 }
 
-.text-color-gold {
-    color: var(--gold);
-}
 
 .nav-link:hover {
     color: #B88A43;
@@ -63,7 +61,7 @@ body {
     color: var(--primary-background);
 }
 
-/* navbar */
+/* main nav */
 .search_box {
     border: 1px solid hsl(0, 0%, 80%);
     height: 50px;
@@ -106,6 +104,72 @@ body {
     color: var(--text-color);
 }
 
+
+/*  mini nav */
+.mini_nav{
+    background: rgba(47, 40, 30, 0.95);
+    backdrop-filter: blur(8px);
+    color: var(--gold);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transform: translateY(-100%);
+    transition-duration: 0.3s;
+    width: 100%;
+
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.12);
+}
+
+.mini_nav.show {
+    transform: translateY(0);
+}
+
+.search_box_mini {
+    border: 1px solid hsl(0, 0%, 80%);
+    height: 30px;
+    width: 200px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.search_box_mini:focus {
+    outline: 1px solid var(--gold);
+}
+
+.search_btn_mini {
+    background-color: white;
+    border-color: hsl(0, 0%, 80%);
+    border-right: transparent;
+    border-radius: 10px;
+    transition-duration: 0.3s;
+}
+
+.search_btn_mini:focus {
+    background-color: var(--hover-background);
+    outline: 1px solid var(--gold);
+    border: 1px solid hsl(0, 0%, 80%);
+    border-right: 0;
+}
+
+.nav_link_mini:hover{
+    color: var(--secondary-background);
+}
+
+.search_btn_mini:hover {
+    border-color: hsl(0, 0%, 80%);
+    background-color: var(--hover-background) !important;
+}
+
+.extra_navlinks_mini {
+    text-decoration: none;
+    color: var(--gold);
+    transition-duration: 0.3s;
+}
+
+.extra_navlinks_mini:hover {
+    color: var(--secondary-background);
+}
 
 
 /* hero */
@@ -267,7 +331,7 @@ body {
 
 /* footer  */
 footer {
-    background-color: #2F281E;
+    background-color: var(--dark-background);
     color: var(--primary-background);
     overflow: hidden;
 }
