@@ -231,8 +231,35 @@ body {
     background-color: var(--secondary-background);
     border-radius: 8px;
     border: 2px solid hsl(40, 43%, 88%);
+    overflow: hidden;
 }
 
 .telephone_icon {
     font-size: 80px;
+}
+
+.cta_background1{
+    left: 40px;
+    filter: opacity(0.1);
+}
+
+.cta_background2{
+    right: 40px;
+    filter: opacity(0.1);
+}
+
+
+/* contact us */
+.contact_us_phone {
+    border-radius: 40px;
+    border: 1px solid var(--gold);
+}
+
+.map iframe {
+    border-radius: 8px;
+}
+
+.map {
+    border: 2px solid hsl(40, 43%, 88%);
+    border-radius: 8px;
 }
