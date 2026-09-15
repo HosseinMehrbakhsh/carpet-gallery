@@ -104,6 +104,52 @@ body {
     color: var(--text-color);
 }
 
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 991.98px) {
+    .brand_name h1 {
+        font-size: 32px;
+    }
+
+    .brand_name span {
+        font-size: 13px;
+    }
+
+    .logo img {
+        width: 50px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .brand_name h1 {
+        font-size: 28px;
+    }
+
+    .brand_name span {
+        font-size: 12px;
+    }
+
+    .logo img {
+        width: 47px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .brand_name h1 {
+        font-size: 24px;
+        margin-bottom: 3px;
+    }
+
+    .brand_name span {
+        font-size: 12px;
+    }
+
+    .logo img {
+        width: 45px;
+    }
+}
+
+
+
 
 /*  mini nav */
 .mini_nav {
