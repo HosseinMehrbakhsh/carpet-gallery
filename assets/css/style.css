@@ -7,7 +7,7 @@
     --text-color: hsl(27, 60%, 20%);
     --primary-background: #F7F3EB;
     --secondary-background: hsl(40, 43%, 91%);
-    --dark-background:#2F281E;
+    --dark-background: #2F281E;
     --hover-background: hsl(39, 42%, 97%);
     --gold: #B88A43;
 }
@@ -106,7 +106,7 @@ body {
 
 
 /*  mini nav */
-.mini_nav{
+.mini_nav {
     background: rgba(47, 40, 30, 0.95);
     backdrop-filter: blur(8px);
     color: var(--gold);
@@ -152,7 +152,7 @@ body {
     border-right: 0;
 }
 
-.nav_link_mini:hover{
+.nav_link_mini:hover {
     color: var(--secondary-background);
 }
 
