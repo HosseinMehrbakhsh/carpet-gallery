@@ -25,29 +25,34 @@
 
 <body>
     <!--main nav -->
-    <nav class="px-4 py-3">
+    <nav class="px-1 px-sm-3 px-md-4 py-2 py-lg-3">
         <div class=".container-fluid">
             <div class="row d-flex align-items-center justify-content-between">
 
-                <div class="col-2">
+                <div class="col-1 d-lg-none">
+                    <i class="bi bi-list fs-4"></i>
+                </div>
+
+                <div class="col-8 col-sm-7 col-md-5 col-lg-3 col-xl-2">
                     <!-- logo and brand name -->
-                    <div class="d-flex align-items-center">
+                    <div
+                        class="d-flex align-items-center justify-content-start justify-content-sm-center justify-content-xl-start">
                         <!-- logo -->
-                        <div>
+                        <div class="logo">
                             <img src="assets/imgs/logo.webp" width="60px" alt="">
                         </div>
 
                         <!-- band name -->
-                        <div class="ps-2 d-flex flex-column align-items-center">
-                            <h1>مهربخش</h1>
+                        <div class="brand_name ps-1 ps-sm-2 d-flex flex-column align-items-center">
+                            <h1 class="mb-sm-1">مهربخش</h1>
                             <span class="small fw-semibold">فرش دستباف ابریشم قم</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- nav links -->
-                <div class="col-4 ">
-                    <ul class="list-unstyled nav justify-content-end">
+                <div class="col-lg-6 col-xl-5 d-none d-lg-block">
+                    <ul class="list-unstyled nav justify-content-center justify-content-xl-end">
                         <li class="nav-item">
                             <a class="nav-link text_gold fs-5" href="">خانه</a>
                         </li>
@@ -67,7 +72,7 @@
                 </div>
 
                 <!-- search box -->
-                <div class="col-4">
+                <div class="col-4 d-none d-xl-block">
                     <div class="input-group d-flex justify-content-end">
                         <input type="search" class="search_box" placeholder="جستجو..">
                         <button class="btn btn-light search_btn">
@@ -77,8 +82,13 @@
                 </div>
 
                 <!-- wishlist and profile -->
-                <div class="col-1">
-                    <ul class="list-unstyled d-flex align-items-center m-0 gap-2">
+                <div class="col-3 col-md-2 col-lg-2 col-xl-1">
+                    <ul class="list-unstyled d-flex align-items-center m-0 gap-2 justify-content-end ">
+                        <li>
+                            <a href="" class="extra_navlinks d-block d-xl-none p-2">
+                                <i class="bi bi-search d-flex align-items-center fs-5"></i>
+                            </a>
+                        </li>
                         <li>
                             <a href="" class="extra_navlinks d-block p-2">
                                 <i class="bi bi-heart d-flex align-items-center fs-5"></i>
@@ -100,25 +110,30 @@
     <!-- mini nav  -->
     <nav class="py-1 mini_nav">
         <div class="container">
-            <div class="row d-flex align-items-center">
+            <div class="row d-flex align-items-center justify-content-between">
+
+                <div class="col-1 d-lg-none">
+                    <i class="bi bi-list fs-4"></i>
+                </div>
 
                 <!-- logo and brand name -->
-                <div class="col-2">
-                    <div class="d-flex align-items-center">
+                <div class="col-8 col-sm-7 col-md-5 col-lg-3 col-xl-2">
+                    <div
+                        class="d-flex align-items-center justify-content-start justify-content-sm-center justify-content-xl-start">
                         <!-- logo -->
-                        <div>
+                        <div class="mini_logo">
                             <img src="assets/imgs/logo.webp" width="40px" alt="">
                         </div>
 
                         <!-- band name -->
-                        <div class="ps-2 d-flex flex-column align-items-center">
-                            <h2 class="m-0">مهربخش</h2>
+                        <div class="ps-1 ps-sm-2 ps-2 d-flex flex-column align-items-center">
+                            <h2 class="mini_brand_name m-0">مهربخش</h2>
                         </div>
                     </div>
                 </div>
 
                 <!-- nav links -->
-                <div class="col-4">
+                <div class="col-lg-5 col-xl-4 d-none d-lg-block">
                     <ul class="list-unstyled nav justify-content-end m-0">
                         <li class="nav-item">
                             <a class="nav-link nav_link_mini text-light fs-6" href="">خانه</a>
@@ -139,7 +154,7 @@
                 </div>
 
                 <!-- search box -->
-                <div class="col-4 d-flex">
+                <div class="col-4 d-none d-xl-flex">
                     <div class="input-group d-flex justify-content-end">
                         <input type="search" class="search_box_mini" placeholder="جستجو..">
                         <button class="btn btn-light search_btn_mini">
@@ -149,8 +164,13 @@
                 </div>
 
                 <!-- wishlist and profile -->
-                <div class="col-2">
+                <div class="col-3 col-md-2 col-lg-2 col-xl-1">
                     <ul class="list-unstyled d-flex align-items-center justify-content-end m-0 gap-2">
+                        <li>
+                            <a href="" class="extra_navlinks d-block d-xl-none p-2">
+                                <i class="bi bi-search d-flex align-items-center fs-5"></i>
+                            </a>
+                        </li>
                         <li>
                             <a href="" class="extra_navlinks_mini d-block p-2">
                                 <i class="bi bi-heart d-flex align-items-center fs-6"></i>
@@ -169,17 +189,21 @@
 
     <main>
         <!-- hero -->
-        <section class="hero shadow-lg">
+        <section class="hero position-relative">
             <div class="container-fluid">
-                <div class="row h-100 d-flex align-items-center">
-                    <div class="col-3 px-5 d-flex flex-column align-items-center">
-                        <h1 class="hero_title m-0 fw-bold">فرش دستباف ابریشم قم</h1>
+                <div
+                    class="row h-100 d-flex align-items-center align-items-sm-start align-items-md-center justify-content-center justify-content-sm-start pt-0 pt-sm-5 pt-md-0">
+                    <div
+                        class="col-9 col-sm-5 col-md-5 col-xl-4 px-sm-2 px-md-5 d-flex flex-column align-items-center hero_content">
+                        <h1 class="col-xl-11 hero_title m-0 fw-bold col-12 col-sm-11 col-md-12">فرش دستباف ابریشم قم
+                        </h1>
                         <div class="line my-4"></div>
-                        <span class="d-block fs-5 fw-semibold">هنر اصیل ایرانی</span>
-                        <p class="fw-semibold my-4">مجموعه ای از فرش های دستباف ابریشم قم با طرح ها و رنگ های متنوع و
+                        <span class="d-block fs-5 fw-semibold hero_title2">هنر اصیل ایرانی</span>
+                        <p class="fw-semibold my-4 col-xl-10">مجموعه ای از فرش های دستباف ابریشم قم با طرح ها و رنگ های
+                            متنوع و
                             اصیل
                         </p>
-                        <a href="" class="gold_btn shadow">
+                        <a href="" class="gold_btn hero_btn shadow ">
                             <span> مشاهده فرش ها</span>
                             <i class="bi bi-chevron-left d-flex align-items-center fs-6 ps-4"></i>
                         </a>
@@ -190,107 +214,126 @@
 
 
         <!-- about us -->
-        <section class="about_us py-5 my-2">
+        <section class="about_us py-4 py-sm-5 py-xl-5 my-2">
             <div class="container">
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-12 col-md-6 order-2 order-md-1">
                         <div
-                            class="h-100 d-flex flex-column align-items-center justify-content-center about_text_box w-50 mx-auto">
-                            <span class="h2">درباره مهربخش</span>
-                            <div class="line my-3"></div>
-                            <p class="text-center lh-lg py-2">فرش مهربخش حاصل عشق و دقت در هنر فرش‌بافی با استفاده از
+                            class="col-10 col-md-9 col-lg-8 col-xl-7 col-xxl-6 h-100 d-flex flex-column align-items-center justify-content-center about_text_box mx-auto mx-md-0 mx-lg-auto">
+                            <span class="h2 about_us_title">درباره مهربخش</span>
+                            <div class="line my-3 about_us_line"></div>
+                            <p class="about_us_p text-center lh-lg py-2">فرش مهربخش حاصل عشق و دقت در هنر فرش‌بافی با
+                                استفاده از
                                 بهترین
                                 ابریشم و مواد اولیه مرغوب توسط
                                 استادکاران
                                 کارآزموده قم می باشد.</p>
                             <div>
-                                <a href="" class="outline_gold_btn">
+                                <a href="" class="outline_gold_btn about_us_btn">
                                     <span>بیشتر بدانید</span>
                                 </a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-6">
-                        <img src="assets/imgs/about-us.webp" class="about_us_img shadow" width="600px" alt="">
+                    <div class="col-12 col-md-6 order-1 order-md-2 mb-5 mb-md-0">
+                        <img src="assets/imgs/about-us.webp" class="about_us_img shadow" width="100%" alt="">
                     </div>
                 </div>
             </div>
         </section>
 
 
-        <!-- select with size -->
+        <!-- select by size -->
         <section class="select_size py-1">
             <div class="container">
                 <div class="d-flex flex-column align-items-center justify-content-center">
                     <div class="select_size_head">
                         <div class="h4">انتخاب براساس سایز</div>
-                        <div class="line w-75 mx-auto my-3"></div>
+                        <div class="line w-75 mx-auto my-lg-3 mt-3 mb-0 mb"></div>
                     </div>
 
-                    <div class="row w-100 d-flex justify-content-center select_size_items gap-1 mt-1">
+                    <div class="row w-100 d-flex justify-content-center select_size_items g-3 mt-1">
 
-                        <div class="col-2">
+                        <div class="col-4 col-lg-2">
                             <a href=""
-                                class="select_size_item shadow-sm p-3 pt-4 d-flex flex-column align-items-center justify-content-center ">
+                                class="select_size_item shadow-sm px-2 px-sm-3 pb-2 pb-xl-3 pt-3 pt-xl-4 d-flex flex-column align-items-center justify-content-center ">
                                 <div class="d-flex justify-content-center align-items-center">
-                                    <img src="assets/imgs/select-size.webp" width="50%" alt="">
+                                    <img src="assets/imgs/select-size.webp" width="40%" alt="">
                                 </div>
                                 <div class="d-flex flex-column align-items-center">
-                                    <span class="d-block py-1 mt-3 fw-semibold">6 متری</span>
-                                    <span class="d-flex align-items-center m-0 p-0 fs-5 fw-semibold">300 × 200</span>
+                                    <span
+                                        class="select_size_item_title d-block py-1 mt-1 mt-sm-2 mt-lg-3 fw-semibold ">6
+                                        متری</span>
+                                    <span
+                                        class="select_size_item_size d-flex align-items-center m-0 p-0 fs-5 fw-semibold">300
+                                        × 200</span>
                                 </div>
                             </a>
                         </div>
 
-                        <div class="col-2 ">
+                        <div class="col-4 col-lg-2">
                             <a href=""
-                                class="p-3 pt-4 select_size_item shadow-sm d-flex flex-column align-items-center justify-content-center">
+                                class="px-2 px-sm-3 pb-2 pb-xl-3 pt-3 pt-xl-4 select_size_item shadow-sm d-flex flex-column align-items-center justify-content-center">
                                 <div class="d-flex justify-content-center align-items-center">
-                                    <img src="assets/imgs/select-size.webp" width="50%" alt="">
+                                    <img src="assets/imgs/select-size.webp" width="40%" alt="">
                                 </div>
                                 <div class="d-flex flex-column align-items-center">
-                                    <span class="d-block py-1 mt-3 fw-semibold">قالیچه</span>
-                                    <span class="d-flex align-items-center m-0 p-0 fs-5 fw-semibold">200 × 130</span>
+                                    <span
+                                        class="select_size_item_title d-block py-1 mt-1 mt-sm-2 mt-lg-3 fw-semibold">قالیچه</span>
+                                    <span
+                                        class="select_size_item_size d-flex align-items-center m-0 p-0 fs-5 fw-semibold">200
+                                        × 130</span>
                                 </div>
                             </a>
                         </div>
 
-                        <div class="col-2">
+                        <div class="col-4 col-lg-2">
                             <a href=""
-                                class="p-3 pt-4 select_size_item shadow-sm d-flex flex-column align-items-center justify-content-center">
+                                class="px-2 px-sm-3 pb-2 pb-xl-3 pt-3 pt-xl-4 select_size_item shadow-sm d-flex flex-column align-items-center justify-content-center">
                                 <div class="d-flex justify-content-center align-items-center">
-                                    <img src="assets/imgs/select-size.webp" width="50%" alt="">
+                                    <img src="assets/imgs/select-size.webp" width="40%" alt="">
                                 </div>
                                 <div class="d-flex flex-column align-items-center">
-                                    <span class="d-block py-1 mt-3 fw-semibold">ذرع و نیم</span>
-                                    <span class="d-flex align-items-center m-0 p-0 fs-5 fw-semibold">150 × 100</span>
+                                    <span
+                                        class="select_size_item_title d-block py-1 mt-1 mt-sm-2 mt-lg-3 fw-semibold">ذرع
+                                        و نیم</span>
+                                    <span
+                                        class="select_size_item_size d-flex align-items-center m-0 p-0 fs-5 fw-semibold">150
+                                        × 100</span>
                                 </div>
                             </a>
                         </div>
 
-                        <div class="col-2">
+                        <div class="col-4 col-lg-2">
                             <a href=""
-                                class=" p-3 pt-4 select_size_item shadow-sm d-flex flex-column align-items-center justify-content-center">
+                                class="px-2 px-sm-3 pb-2 pb-xl-3 pt-3 pt-xl-4 select_size_item shadow-sm d-flex flex-column align-items-center justify-content-center">
                                 <div class="d-flex justify-content-center align-items-center">
-                                    <img src="assets/imgs/select-size.webp" width="50%" alt="">
+                                    <img src="assets/imgs/select-size.webp" width="40%" alt="">
                                 </div>
                                 <div class="d-flex flex-column align-items-center">
-                                    <span class="d-block py-1 mt-3 fw-semibold">ذرع و چارک</span>
-                                    <span class="d-flex align-items-center m-0 p-0 fs-5 fw-semibold">120 × 80</span>
+                                    <span
+                                        class="select_size_item_title d-block py-1 mt-1 mt-sm-2 mt-lg-3 fw-semibold">ذرع
+                                        و چارک</span>
+                                    <span
+                                        class="select_size_item_size d-flex align-items-center m-0 p-0 fs-5 fw-semibold">120
+                                        × 80</span>
                                 </div>
                             </a>
                         </div>
 
-                        <div class="col-2 ">
+                        <div class="col-4 col-lg-2">
                             <a href=""
-                                class="p-3 pt-4 select_size_item shadow-sm d-flex flex-column align-items-center justify-content-center">
+                                class="px-2 px-sm-3 pb-2 pb-xl-3 pt-3 pt-xl-4 select_size_item shadow-sm d-flex flex-column align-items-center justify-content-center">
                                 <div class="d-flex justify-content-center align-items-center">
-                                    <img src="assets/imgs/select-size.webp" width="50%" alt="">
+                                    <img src="assets/imgs/select-size.webp" width="40%" alt="">
                                 </div>
                                 <div class="d-flex flex-column align-items-center">
-                                    <span class="d-block py-1 mt-3 fw-semibold">پشتی</span>
-                                    <span class="d-flex align-items-center m-0 p-0 fs-5 fw-semibold">90 × 60</span>
+                                    <span
+                                        class="select_size_item_title d-block py-1 mt-1 mt-sm-2 mt-lg-3 fw-semibold">پشتی</span>
+                                    <span
+                                        class="select_size_item_size d-flex align-items-center m-0 p-0 fs-5 fw-semibold">90
+                                        × 60</span>
                                 </div>
                             </a>
                         </div>
@@ -301,7 +344,7 @@
 
 
         <!-- special carpets -->
-        <section class="special_carpets py-5 my-2">
+        <section class="special_carpets py-5 my-lg-2">
             <div class="container">
                 <div class="d-flex flex-column align-items-center justify-content-center">
                     <!-- special carpets header -->
@@ -310,9 +353,10 @@
                         <div class="line w-75 mx-auto my-3"></div>
                     </div>
 
+                    <!-- special carpet items -->
                     <div class="products_container w-100 mt-2">
-                        <div class="row">
-                            <div class="col-3">
+                        <div class="row g-4">
+                            <div class="col-6 col-xl-3">
                                 <a href=""
                                     class="product_card shadow-sm d-flex flex-column align-items-center justify-content-center">
                                     <div class="product_head w-100">
@@ -322,9 +366,11 @@
                                         </div>
                                     </div>
 
-                                    <div class="product_body py-4">
-                                        <span class="d-block text-center fs-5">قالیچه هزارگل مهربخش</span>
-                                        <div class="d-flex gap-5 py-2 small">
+                                    <div class="product_body px-2 px-sm-0 py-3 py-md-4 py-xl-3 py-xxl-4">
+                                        <span class="product_body_title d-block text-center fs-5">قالیچه هزارگل
+                                            مهربخش</span>
+                                        <div
+                                            class="product_body_detail d-flex justify-content-between justify-content-sm-center gap-sm-5 py-2 small">
                                             <div class=" text-center">
                                                 <span>سایز:</span>
                                                 <span>200 × 130</span>
@@ -334,8 +380,9 @@
                                                 <span>نفتی</span>
                                             </div>
                                         </div>
-                                        <span class="d-block w-100 text-center fs-6 pt-2 text-danger fw-semibold">
-                                            1400000000
+                                        <span
+                                            class="product_body_price d-block w-100 text-center fs-6 pt-2 text-danger fw-semibold">
+                                            1,400,000,000
                                             تومان
                                         </span>
                                     </div>
@@ -350,7 +397,7 @@
                                 </a>
                             </div>
 
-                            <div class="col-3">
+                            <div class="col-6 col-xl-3">
                                 <a href=""
                                     class="product_card shadow-sm d-flex flex-column align-items-center justify-content-center">
                                     <div class="product_head w-100">
@@ -360,9 +407,11 @@
                                         </div>
                                     </div>
 
-                                    <div class="product_body py-4">
-                                        <span class="d-block text-center fs-5">قالیچه هزارگل مهربخش</span>
-                                        <div class="d-flex gap-5 py-2 small">
+                                    <div class="product_body px-2 px-sm-0 py-3 py-md-4 py-xl-3 py-xxl-4">
+                                        <span class="product_body_title d-block text-center fs-5">قالیچه هزارگل
+                                            مهربخش</span>
+                                        <div
+                                            class="product_body_detail d-flex justify-content-between justify-content-sm-center gap-sm-5 py-2 small">
                                             <div class=" text-center">
                                                 <span>سایز:</span>
                                                 <span>200 × 130</span>
@@ -372,8 +421,9 @@
                                                 <span>نفتی</span>
                                             </div>
                                         </div>
-                                        <span class="d-block w-100 text-center fs-6 pt-2 text-danger fw-semibold">
-                                            1400000000
+                                        <span
+                                            class="product_body_price d-block w-100 text-center fs-6 pt-2 text-danger fw-semibold">
+                                            1,400,000,000
                                             تومان
                                         </span>
                                     </div>
@@ -388,7 +438,7 @@
                                 </a>
                             </div>
 
-                            <div class="col-3">
+                            <div class="col-6 col-xl-3">
                                 <a href=""
                                     class="product_card shadow-sm d-flex flex-column align-items-center justify-content-center">
                                     <div class="product_head w-100">
@@ -398,9 +448,11 @@
                                         </div>
                                     </div>
 
-                                    <div class="product_body py-4">
-                                        <span class="d-block text-center fs-5">قالیچه هزارگل مهربخش</span>
-                                        <div class="d-flex gap-5 py-2 small">
+                                    <div class="product_body px-2 px-sm-0 py-3 py-md-4 py-xl-3 py-xxl-4">
+                                        <span class="product_body_title d-block text-center fs-5">قالیچه هزارگل
+                                            مهربخش</span>
+                                        <div
+                                            class="product_body_detail d-flex justify-content-between justify-content-sm-center gap-sm-5 py-2 small">
                                             <div class=" text-center">
                                                 <span>سایز:</span>
                                                 <span>200 × 130</span>
@@ -410,8 +462,9 @@
                                                 <span>نفتی</span>
                                             </div>
                                         </div>
-                                        <span class="d-block w-100 text-center fs-6 pt-2 text-danger fw-semibold">
-                                            1400000000
+                                        <span
+                                            class="product_body_price d-block w-100 text-center fs-6 pt-2 text-danger fw-semibold">
+                                            1,400,000,000
                                             تومان
                                         </span>
                                     </div>
@@ -426,7 +479,7 @@
                                 </a>
                             </div>
 
-                            <div class="col-3">
+                            <div class="col-6 col-xl-3">
                                 <a href=""
                                     class="product_card shadow-sm d-flex flex-column align-items-center justify-content-center">
                                     <div class="product_head w-100">
@@ -436,9 +489,11 @@
                                         </div>
                                     </div>
 
-                                    <div class="product_body py-4">
-                                        <span class="d-block text-center fs-5">قالیچه هزارگل مهربخش</span>
-                                        <div class="d-flex gap-5 py-2 small">
+                                    <div class="product_body px-2 px-sm-0 py-3 py-md-4 py-xl-3 py-xxl-4">
+                                        <span class="product_body_title d-block text-center fs-5">قالیچه هزارگل
+                                            مهربخش</span>
+                                        <div
+                                            class="product_body_detail d-flex justify-content-between justify-content-sm-center gap-sm-5 py-2 small">
                                             <div class=" text-center">
                                                 <span>سایز:</span>
                                                 <span>200 × 130</span>
@@ -448,8 +503,9 @@
                                                 <span>نفتی</span>
                                             </div>
                                         </div>
-                                        <span class="d-block w-100 text-center fs-6 pt-2 text-danger fw-semibold">
-                                            1400000000
+                                        <span
+                                            class="product_body_price d-block w-100 text-center fs-6 pt-2 text-danger fw-semibold">
+                                            1,400,000,000
                                             تومان
                                         </span>
                                     </div>
@@ -471,41 +527,42 @@
                         <i class="bi bi-chevron-left d-flex align-items-center fs-6 ps-4"></i>
                     </a>
 
-                    <div class="carpet_features w-100 my-3">
+                    <!-- carpet features -->
+                    <div class="carpet_features w-100 my-2 my-md-3">
                         <div class="row">
-                            <div class="col-3">
+                            <div class="col-3 carpet_feature_col my-2 my-sm-3 my-lg-4">
                                 <div
-                                    class="carpet_feature my-4 d-flex flex-column justify-content-center align-items-center">
+                                    class="carpet_feature  d-flex flex-column justify-content-center align-items-center">
                                     <img src="assets/imgs/special-carpet-feature1.webp" height="70px" alt="">
-                                    <span class="fw-semibold pt-3">دستباف قم</span>
-                                    <span class="pt-1 small">هنر اصیل و ماندگار</span>
+                                    <span class="carpet_feature_title fw-semibold pt-3">دستباف قم</span>
+                                    <span class="carpet_feature_detail pt-1 small">هنر اصیل و ماندگار</span>
                                 </div>
                             </div>
 
-                            <div class="col-3">
+                            <div class="col-3 carpet_feature_col my-2 my-sm-3 my-lg-4">
                                 <div
-                                    class="carpet_feature my-4 d-flex flex-column justify-content-center align-items-center">
+                                    class="carpet_feature d-flex flex-column justify-content-center align-items-center">
                                     <img src="assets/imgs/special-carpet-feature2.webp" height="70px" alt="">
-                                    <span class="fw-semibold pt-3">کیفیت ممتاز</span>
-                                    <span class="pt-1 small">بهترین مواد اولیه</span>
+                                    <span class="carpet_feature_title fw-semibold pt-3">کیفیت ممتاز</span>
+                                    <span class="carpet_feature_detail pt-1 small">بهترین مواد اولیه</span>
                                 </div>
                             </div>
 
-                            <div class="col-3">
+                            <div class="col-3 carpet_feature_col my-2 my-sm-3 my-lg-4">
                                 <div
-                                    class="carpet_feature my-4 d-flex flex-column justify-content-center align-items-center">
+                                    class="carpet_feature d-flex flex-column justify-content-center align-items-center">
                                     <img src="assets/imgs/special-carpet-feature3.webp" height="70px" alt="">
-                                    <span class="fw-semibold pt-3">ضمانت اصل بودن</span>
-                                    <span class="pt-1 small">تضمین اصالت کالا</span>
+                                    <span class="carpet_feature_title fw-semibold pt-3">ضمانت اصل بودن</span>
+                                    <span class="carpet_feature_detail pt-1 small">تضمین اصالت کالا</span>
                                 </div>
                             </div>
 
-                            <div class="col-3">
+                            <div class="col-3 carpet_feature_col my-2 my-sm-3 my-lg-4">
                                 <div
-                                    class="carpet_feature my-4 d-flex flex-column justify-content-center align-items-center">
+                                    class="carpet_feature d-flex flex-column justify-content-center align-items-center">
                                     <img src="assets/imgs/special-carpet-feature4.webp" height="70px" alt="">
-                                    <span class="fw-semibold pt-3">ارسال مطمئن</span>
-                                    <span class="pt-1 small">بسته بندی استاندارد</span>
+                                    <span class="carpet_feature_title fw-semibold pt-3">ارسال مطمئن</span>
+                                    <span class="carpet_feature_detail pt-1 small">بسته بندی استاندارد</span>
                                 </div>
                             </div>
                         </div>
@@ -513,13 +570,16 @@
 
                     <!-- CTA  -->
                     <div
-                        class="carpet_cta mt-4 py-3 d-flex justify-content-center align-items-center gap-5 position-relative">
-                        <div class="d-flex flex-column align-items-center justify-content-center">
-                            <span class="fs-5 fw-semibold">فرش مورد نظر خود را پیدا کردید؟</span>
-                            <span class="small fw-semibold py-2 mb-3">برای دریافت اطلاعات بیشتر درباره فرش و نحوه خرید،
+                        class="carpet_cta px-4 px-lg-0 mt-4 py-3 d-flex justify-content-center align-items-center gap-0 gap-sm-2 gap-md-2 gap-lg-0 position-relative">
+                        <div
+                            class="col-9 col-sm-7 col-md-8 col-lg-7 col-xl-6 d-flex flex-column align-items-center justify-content-center">
+                            <span class="cta_title fs-5 fw-semibold">فرش مورد نظر خود را پیدا کردید؟</span>
+                            <span
+                                class="cta_detail col-10 col-sm-11 col-lg-12 small fw-semibold py-2 mb-2 mb-lg-3 text-center">برای
+                                دریافت اطلاعات بیشتر درباره فرش و نحوه خرید،
                                 با
                                 ما در تماس باشید.</span>
-                            <a href="" class="gold_btn shadow-sm" style="padding: 12px 30px;">
+                            <a href="" class="cta_btn gold_btn shadow-sm " style="padding: 12px 30px;">
                                 <span class="small">تماس با ما</span>
                                 <i class="bi bi-chevron-left d-flex align-items-center fs-6 ps-4"></i>
                             </a>
@@ -530,10 +590,10 @@
                         </div>
 
                         <!-- background texture -->
-                        <div class="position-absolute top-50 end-0 translate-middle-y">
+                        <div class="position-absolute top-50 end-0 translate-middle-y cta_background_container1">
                             <img src="assets/imgs/footer_background.webp" class="cta_background1" width="200px" alt="">
                         </div>
-                        <div class=" position-absolute top-50 start-0 translate-middle-y">
+                        <div class=" position-absolute top-50 start-0 translate-middle-y cta_background_container2">
                             <img src="assets/imgs/footer_background.webp" class="cta_background2" width="200px" alt="">
                         </div>
                     </div>
@@ -543,41 +603,28 @@
 
 
         <!-- contact us -->
-        <section class="contact_us py-5">
+        <section class="contact_us mb-4 py-xl-3">
             <div class="container">
-                <div class="row align-items-center justify-content-around">
-                    <div class="col-5">
+                <div
+                    class="row align-items-center justify-content-center justify-content-lg-between justify-content-xl-around g-5 g-lg-0">
+                    <div class="col-12 col-sm-11 col-md-8 col-lg-6 col-xl-5">
                         <div class="d-flex flex-column align-items-center justify-content-center">
-                            <span class="h4">با ما در ارتباط باشید</span>
+                            <span class="h4 contact_us_title">با ما در ارتباط باشید</span>
                             <div class="line my-2 w-50"></div>
-                            <p class="text-center lh-lg py-1 col-9"> برای مشاوره، استعلام قیمت، اطلاعات بیشتر یا هماهنگی
+                            <p class="contact_us_detail text-center lh-lg py-1 col-xl-10 col-xxl-9 mb-0 mb-lg-2"> برای
+                                مشاوره، استعلام قیمت، اطلاعات بیشتر یا هماهنگی
                                 بازدید می‌توانید از راه‌های ارتباطی زیر با ما در تماس باشید.</p>
                         </div>
 
                         <div class="row pt-4 g-4">
                             <div class="col-6 d-flex align-items-center">
-                                <div class="d-flex align-items-center gap-4">
+                                <div class="d-flex align-items-center gap-3 gap-sm-4">
                                     <div class="contact_us_phone p-2">
                                         <i class="bi bi-whatsapp text_gold fs-4"></i>
                                     </div>
                                     <div class="d-flex flex-column">
-                                        <span class="h6">واتساپ / ایتا</span>
-                                        <span class="bold ltr">0912 153 5516</span>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="col-6 d-flex align-items-center">
-                                <div class="d-flex align-items-center gap-4">
-                                    <div class="contact_us_phone p-2">
-                                        <i class="bi bi-geo-alt text_gold fs-4"></i>
-                                    </div>
-                                    <div class="d-flex flex-column">
-                                        <span class="h6">آدرس</span>
-                                        <span class=" small lh-lg">قم، خیابان 19 دی، پاساژ مهدیه، طبقه فوقانی، پلاک 19،
-                                            تولیدی فرش
-                                            مهربخش</span>
+                                        <span class="h6 contact_us_item_title">واتساپ / ایتا</span>
+                                        <span class="bold ltr contact_us_item_number">0912 153 5516</span>
                                     </div>
                                 </div>
                             </div>
@@ -588,8 +635,23 @@
                                         <i class="bi bi-telephone text_gold fs-4"></i>
                                     </div>
                                     <div class="d-flex flex-column">
-                                        <span class="h6">تلفن ثابت</span>
-                                        <span class="bold ltr">025 3775 7484</span>
+                                        <span class="h6 contact_us_item_title">تلفن ثابت</span>
+                                        <span class="bold ltr contact_us_item_number">025 3775 7484</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-6 d-flex align-items-center">
+                                <div class="d-flex align-items-center gap-4">
+                                    <div class="contact_us_phone p-2">
+                                        <i class="bi bi-geo-alt text_gold fs-4"></i>
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <span class="h6 contact_us_item_title">آدرس</span>
+                                        <span class=" small lh-lg contact_us_item_detail">قم، خیابان 19 دی، پاساژ مهدیه،
+                                            طبقه فوقانی، پلاک 19،
+                                            تولیدی فرش
+                                            مهربخش</span>
                                     </div>
                                 </div>
                             </div>
@@ -600,9 +662,9 @@
                                         <i class="bi bi-clock text_gold fs-4"></i>
                                     </div>
                                     <div class="d-flex flex-column">
-                                        <span class="h6">ساعات کاری</span>
-                                        <span class="small bold mb-1">شنبه تا پنجشنبه</span>
-                                        <span class="small bold">10:00 صبح تا 13:30 ظهر</span>
+                                        <span class="h6 contact_us_detail_item">ساعات کاری</span>
+                                        <span class="small bold mb-1 contact_us_item_title">شنبه تا پنجشنبه</span>
+                                        <span class="small bold contact_us_item_detail">10:00 صبح تا 13:30 ظهر</span>
                                     </div>
                                 </div>
                             </div>
@@ -610,11 +672,11 @@
                         </div>
                     </div>
 
-                    <div class="col-5">
-                        <div class=" d-flex justify-content-center map p-3">
+                    <div class="col-9 col-md-8 col-lg-5 col-xl-4">
+                        <div class=" d-flex justify-content-center map p-2 p-lg-3">
                             <iframe title="map-iframe"
                                 src="https://neshan.org/maps/iframe/places/61d1ba69313bbf83d821fd987650c64e#c34.646-50.887-20z-0p/34.6462736734398/50.88631746629694"
-                                width="500" height="350" allowFullScreen loading="lazy"></iframe>
+                                width="450" height="280" allowFullScreen loading="lazy"></iframe>
                         </div>
                     </div>
                 </div>
@@ -625,18 +687,20 @@
     <!-- footer -->
     <footer class="py-4 position-relative">
         <div class="container">
-            <div class="row">
-                <div class="col-4">
-                    <div class="d-flex justify-content-start">
-                        <div class="ms-5 d-flex flex-column align-items-center justify-content-center">
+            <div class="row d-flex justify-content-center g-4 g-md-5 g-md-0">
+                <div class="col-6 col-md-4 p-0">
+                    <div
+                        class="col-7 col-sm-12 d-flex justify-content-start justify-content-sm-center justify-content-md-start">
+                        <div class="ms-0 ms-lg-5 d-flex flex-column align-items-center justify-content-center">
                             <img src="assets/imgs/logo.webp" width="60px" alt="">
                             <span class="text_gold fs-2 fw-semibold pb-1">مهربخش</span>
-                            <span class="small fw-light">فرش ابریشم قم، اصالت در هر نقش</span>
+                            <span class="col-11 col-sm-12 text-center small fw-light">فرش ابریشم قم، اصالت در هر
+                                نقش</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-4">
+                <div class="col-12 col-md-4 order-2 order-md-1">
                     <div class="row">
                         <div class="col-6 footer_links_col">
                             <div class="d-flex justify-content-center">
@@ -660,7 +724,7 @@
                             </div>
                         </div>
 
-                        <div class="col-6 footer_links_col">
+                        <div class="col-6 footer_links_col px-2">
                             <div class="d-flex justify-content-center">
                                 <div class="footer_links">
                                     <span class="d-block text_gold pb-2 fw-semibold ">راهنمای خرید</span>
@@ -681,10 +745,11 @@
                     </div>
                 </div>
 
-                <div class="col-4">
+                <div
+                    class="col-3 col-sm-6 col-md-4 order-1 order-md-2 d-flex align-items-center justify-content-center p-0">
                     <div class="footer_links_social d-flex flex-column align-items-center">
-                        <span class="d-block text_gold pb-4 fw-semibold">ما را دنبال کنید</span>
-                        <ul class="list-unstyled nav gap-3">
+                        <span class="d-block text_gold pb-3 pb-md-4 fw-semibold">ما را دنبال کنید</span>
+                        <ul class="list-unstyled nav gap-2 gap-lg-3 justify-content-center">
                             <li class="py-1">
                                 <a href="" class="social_link_item">
                                     <div>
@@ -722,9 +787,11 @@
                 </div>
             </div>
 
-            <div class="d-flex justify-content-between align-items-center pt-2 mt-5 footer_bottom">
-                <span class="small fw-lighter">طراحی و توسعه توسط محمدحسین مهربخش</span>
-                <span class="small fw-lighter ltr">© 2026 Mehrbakhsh Carpet. All rights reserved.</span>
+            <div class="row d-flex justify-content-between align-items-center pt-2 mt-4 mt-md-5 g-1 footer_bottom">
+                <span class="col-12 col-sm-6 small fw-lighter order-2 order-sm-1">طراحی و توسعه توسط محمدحسین
+                    مهربخش</span>
+                <span class="col-12 col-sm-6 small fw-lighter order-1 order-sm-2 ltr">© 2026 Mehrbakhsh Carpet. All
+                    rights reserved.</span>
             </div>
         </div>
 

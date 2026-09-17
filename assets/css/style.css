@@ -4,7 +4,7 @@
 }
 
 :root {
-    --text-color: hsl(27, 60%, 20%);
+    --text-color: #523014;
     --primary-background: #F7F3EB;
     --secondary-background: hsl(40, 43%, 91%);
     --dark-background: #2F281E;
@@ -57,7 +57,7 @@ body {
 }
 
 .gold_btn:hover {
-    background-color: hsl(36, 47%, 35%);
+    background-color: hsl(36, 47%, 40%);
     color: var(--primary-background);
 }
 
@@ -178,10 +178,9 @@ body {
     height: 87vh;
     background-image: url(../imgs/hero.webp);
     background-size: cover;
-    background-repeat: no-repeat;
     background-position: center;
-    border-top: 1px solid white;
-    border-bottom: 1px solid white;
+    background-repeat: no-repeat;
+    overflow: hidden;
 }
 
 .hero_title {
@@ -287,8 +286,8 @@ body {
 }
 
 
-.carpet_features .col-3:not(:last-child) .carpet_feature {
-    border-left: 2px solid hsl(40, 43%, 80%);
+.carpet_feature_col:not(:last-child) {
+    border-left: 2px solid hsl(40, 43%, 85%);
 }
 
 .carpet_cta {
@@ -378,4 +377,362 @@ footer .footer_links_col {
 .footer_background2 {
     filter: opacity(0.2);
     transform: rotate(180deg);
+}
+
+
+
+/*------------------ responsive -----------------*/
+@media (max-width: 1399.98px) {
+
+    /* special carpets  */
+    .product_img_container {
+        height: 250px;
+    }
+
+    .product_img {
+        height: 300px;
+    }
+}
+
+@media (max-width: 1199.98px) {
+
+    /* about us  */
+    .about_us_p {
+        font-size: 15px !important;
+    }
+
+    /* select by size */
+    .select_size_item_size {
+        font-size: 18px !important;
+    }
+
+}
+
+@media (max-width: 991.98px) {
+
+    /* main nav  */
+    .brand_name h1 {
+        font-size: 32px;
+    }
+
+    .brand_name span {
+        font-size: 13px;
+    }
+
+    .logo img {
+        width: 50px;
+    }
+
+    /* hero  */
+    .hero {
+        background-position: 40% center;
+    }
+
+    .hero_content h1 {
+        font-size: 40px;
+    }
+
+    .hero_title2 {
+        font-size: 20px !important;
+    }
+
+    .hero_content p {
+        font-size: 14px;
+    }
+
+    .hero_btn span {
+        font-size: 16px;
+    }
+
+    /* about us  */
+    .about_us_title {
+        font-size: 26px !important;
+    }
+
+    .about_us_p {
+        font-size: 12px !important;
+        margin-bottom: 5px;
+    }
+
+    .about_us_line {
+        margin: 5px 0px !important;
+    }
+
+    .about_us_btn span {
+        font-size: 15px;
+    }
+
+    /* select by size */
+    .select_size_items {
+        width: 70% !important;
+    }
+
+
+    /* special carpet  */
+    /* carpet feature  */
+    .carpet_feature img {
+        height: 55px;
+    }
+
+    /* cta  */
+    .cta_background1 {
+        width: 150px;
+    }
+
+    .cta_background2 {
+        width: 150px;
+    }
+
+    .cta_background_container1 {
+        left: -40px !important;
+    }
+
+    .cta_background_container2 {
+        right: -40px !important;
+    }
+
+    .cta_title {
+        font-size: 18px !important;
+    }
+
+    .cta_detail {
+        font-size: 12px !important;
+        font-weight: normal !important;
+    }
+
+    .telephone_icon {
+        font-size: 70px;
+    }
+
+    .cta_btn span {
+        font-size: 14px;
+    }
+
+}
+
+@media (max-width: 767.98px) {
+    .brand_name h1 {
+        font-size: 28px;
+    }
+
+    .brand_name span {
+        font-size: 12px;
+    }
+
+    .logo img {
+        width: 47px;
+    }
+
+    /* hero  */
+    .hero {
+        background-position: 35% center;
+    }
+
+    .hero_content h1 {
+        font-size: 34px;
+    }
+
+    .hero_title2 {
+        font-size: 17px !important;
+    }
+
+    .hero_content p {
+        font-size: 11px;
+    }
+
+    .hero_btn span {
+        font-size: 13px;
+    }
+
+    .hero_btn {
+        padding: 12px 12px;
+    }
+
+    .hero_content {
+        backdrop-filter: blur(1px);
+        border-radius: 8px;
+    }
+
+    /* select by size */
+    .select_size_items {
+        width: 100% !important;
+    }
+
+
+    /* special carpets  */
+    .product_img_container {
+        height: 230px;
+    }
+
+    .product_img {
+        height: 320px;
+    }
+
+
+    /* special carpet  */
+    /* carpet feature  */
+    .carpet_feature_title {
+        font-size: 14px;
+    }
+
+    .carpet_feature_detail {
+        font-size: 12px;
+    }
+
+
+    /* contact us  */
+    .contact_us_title {
+        font-size: 20px !important;
+    }
+
+    .contact_us_detail {
+        font-size: 14px !important;
+    }
+
+
+    /* footer  */
+    .footer_links_col:last-child {
+        border-left: 0;
+    }
+
+    .footer_background1 {
+        top: 20% !important;
+    }
+
+    .footer_background2 {
+        top: 20% !important;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .brand_name h1 {
+        font-size: 24px;
+        margin-bottom: 3px;
+    }
+
+    .brand_name span {
+        font-size: 12px;
+    }
+
+    .logo img {
+        width: 45px;
+    }
+
+    /* hero  */
+    .hero {
+        background-position: 25% center;
+        height: 90vh;
+    }
+
+    .hero_content {
+        backdrop-filter: blur(4px);
+        border-radius: 8px;
+        background-color: rgb(247, 243, 235, 0.5);
+        padding: 20px;
+        max-width: 230px;
+    }
+
+    .hero .row {
+        width: 100%;
+    }
+
+    /* select by size */
+    .select_size_item_title {
+        font-size: 14px;
+    }
+
+    .select_size_item_size {
+        font-size: 15px !important;
+    }
+
+    /* special carpets  */
+    .product_img_container {
+        height: 200px;
+    }
+
+    .product_img {
+        height: 250px;
+    }
+
+    .product_body_title {
+        font-size: 18px !important;
+    }
+
+    .product_body_detail {
+        font-size: 12px;
+    }
+
+    .product_body_price {
+        font-size: 14px !important;
+    }
+
+    /* special carpet  */
+    /* carpet feature  */
+    .carpet_feature img {
+        height: 45px;
+    }
+
+    .carpet_feature_title {
+        font-size: 10px;
+    }
+
+    .carpet_feature_detail {
+        font-size: 9px;
+    }
+
+    /* cta  */
+    .cta_background1 {
+        width: 120px;
+    }
+
+    .cta_background2 {
+        width: 120px;
+    }
+
+    .cta_title {
+        font-size: 16px !important;
+    }
+
+    .cta_detail {
+        font-size: 10px !important;
+        font-weight: normal !important;
+    }
+
+    .telephone_icon {
+        font-size: 55px;
+    }
+
+    .cta_btn {
+        padding: 10px 18px !important;
+    }
+
+    .cta_btn span {
+        font-size: 12px;
+    }
+
+    /* contact us  */
+    .contact_us_title {
+        font-size: 18px;
+    }
+
+    .contact_us_detail {
+        font-size: 12px;
+    }
+
+    .contact_us_item_title {
+        font-size: 14px;
+    }
+
+    .contact_us_item_detail {
+        font-size: 11px;
+    }
+
+    .contact_us_item_number {
+        font-size: 14px;
+    }
+
+    .map iframe {
+        height: 220px;
+        width: 100%;
+    }
 }
