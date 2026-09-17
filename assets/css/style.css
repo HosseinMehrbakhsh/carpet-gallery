@@ -471,31 +471,38 @@ footer .footer_links_col {
     .carpet_feature img {
         height: 55px;
     }
+
     /* cta  */
-    .cta_background1{
+    .cta_background1 {
         width: 150px;
     }
-    .cta_background2{
+
+    .cta_background2 {
         width: 150px;
     }
-    .cta_background_container1{
-        left:-40px !important; 
+
+    .cta_background_container1 {
+        left: -40px !important;
     }
-    .cta_background_container2{
-        right:-40px !important; 
+
+    .cta_background_container2 {
+        right: -40px !important;
     }
-    .cta_title{
+
+    .cta_title {
         font-size: 18px !important;
     }
-    .cta_detail{
+
+    .cta_detail {
         font-size: 12px !important;
         font-weight: normal !important;
     }
 
-    .telephone_icon{
+    .telephone_icon {
         font-size: 70px;
     }
-    .cta_btn span{
+
+    .cta_btn span {
         font-size: 14px;
     }
 
@@ -562,24 +569,37 @@ footer .footer_links_col {
 
     /* special carpet  */
     /* carpet feature  */
-    .carpet_feature_title{
+    .carpet_feature_title {
         font-size: 14px;
     }
 
-    .carpet_feature_detail{
+    .carpet_feature_detail {
         font-size: 12px;
     }
 
 
     /* contact us  */
-    .contact_us_title{
+    .contact_us_title {
         font-size: 20px !important;
     }
-    .contact_us_detail{
+
+    .contact_us_detail {
         font-size: 14px !important;
     }
-   
 
+
+    /* footer  */
+    .footer_links_col:last-child {
+        border-left: 0;
+    }
+
+    .footer_background1 {
+        top: 20% !important;
+    }
+
+    .footer_background2 {
+        top: 20% !important;
+    }
 }
 
 @media (max-width: 575.98px) {
@@ -646,59 +666,70 @@ footer .footer_links_col {
 
     /* special carpet  */
     /* carpet feature  */
-    .carpet_feature img{
+    .carpet_feature img {
         height: 45px;
     }
 
-    .carpet_feature_title{
+    .carpet_feature_title {
         font-size: 10px;
     }
 
-    .carpet_feature_detail{
+    .carpet_feature_detail {
         font-size: 9px;
     }
+
     /* cta  */
-    .cta_background1{
+    .cta_background1 {
         width: 120px;
     }
-    .cta_background2{
+
+    .cta_background2 {
         width: 120px;
     }
-    .cta_title{
+
+    .cta_title {
         font-size: 16px !important;
     }
-    .cta_detail{
+
+    .cta_detail {
         font-size: 10px !important;
         font-weight: normal !important;
     }
 
-    .telephone_icon{
+    .telephone_icon {
         font-size: 55px;
     }
-    .cta_btn{
+
+    .cta_btn {
         padding: 10px 18px !important;
     }
-    .cta_btn span{
+
+    .cta_btn span {
         font-size: 12px;
     }
 
     /* contact us  */
-    .contact_us_title{
+    .contact_us_title {
         font-size: 18px;
     }
-    .contact_us_detail{
+
+    .contact_us_detail {
         font-size: 12px;
     }
-    .contact_us_item_title{
+
+    .contact_us_item_title {
         font-size: 14px;
     }
-    .contact_us_item_detail{
+
+    .contact_us_item_detail {
         font-size: 11px;
     }
-    .contact_us_item_number{
+
+    .contact_us_item_number {
         font-size: 14px;
     }
-    .map iframe{
+
+    .map iframe {
         height: 220px;
         width: 100%;
     }
