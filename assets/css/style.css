@@ -382,12 +382,30 @@ footer .footer_links_col {
 
 
 /*------------------ responsive -----------------*/
+@media (max-width: 1399.98px) {
+
+    /* special carpets  */
+    .product_img_container {
+        height: 250px;
+    }
+
+    .product_img {
+        height: 300px;
+    }
+}
+
 @media (max-width: 1199.98px) {
 
     /* about us  */
     .about_us_p {
         font-size: 15px !important;
     }
+
+    /* select by size */
+    .select_size_item_size {
+        font-size: 18px !important;
+    }
+
 }
 
 @media (max-width: 991.98px) {
@@ -441,6 +459,12 @@ footer .footer_links_col {
     .about_us_btn span {
         font-size: 15px;
     }
+
+    /* select by size */
+    .select_size_items {
+        width: 70% !important;
+    }
+
 }
 
 @media (max-width: 767.98px) {
@@ -486,28 +510,21 @@ footer .footer_links_col {
         border-radius: 8px;
     }
 
-    /* about us  */
-    .about_us_title {
-        font-size: 22px !important;
+    /* select by size */
+    .select_size_items {
+        width: 100% !important;
     }
 
-    .about_us_p {
-        font-size: 11px !important;
-        margin-bottom: 5px;
-        line-height: normal !important;
+
+    /* special carpets  */
+    .product_img_container {
+        height: 230px;
     }
 
-    .about_us_line {
-        margin: 0 !important;
+    .product_img {
+        height: 320px;
     }
 
-    .about_us_btn {
-        padding: 8px 25px;
-    }
-
-    .about_us_btn span {
-        font-size: 13px;
-    }
 }
 
 @media (max-width: 575.98px) {
@@ -526,51 +543,49 @@ footer .footer_links_col {
 
     /* hero  */
     .hero {
-        background-position: 35% center;
-    }
-
-    .hero_content h1 {
-        font-size: 26px;
-    }
-
-    .hero_title2 {
-        font-size: 15px !important;
-    }
-
-    .hero_content p {
-        font-size: 10px;
-    }
-
-    .hero_btn span {
-        font-size: 11px;
-    }
-
-    .hero_btn {
-        padding: 10px 10px;
+        background-position: 25% center;
+        height: 90vh;
     }
 
     .hero_content {
-        backdrop-filter: blur(1px);
+        backdrop-filter: blur(4px);
         border-radius: 8px;
+        background-color: rgb(247, 243, 235, 0.5);
+        padding: 20px;
+        max-width: 230px;
     }
 
-    /* about us  */
-    .about_us_title {
+    .hero .row {
+        width: 100%;
+    }
+
+    /* select by size */
+    .select_size_item_title {
+        font-size: 14px;
+    }
+
+    .select_size_item_size {
+        font-size: 15px !important;
+    }
+
+    /* special carpets  */
+    .product_img_container {
+        height: 200px;
+    }
+
+    .product_img {
+        height: 250px;
+    }
+
+    .product_body_title {
         font-size: 18px !important;
     }
 
-    .about_us_p {
-        font-size: 9px !important;
-        margin-bottom: 2px;
-        line-height: normal !important;
+    .product_body_detail {
+        font-size: 12px;
     }
 
-    .about_us_btn {
-        padding: 3px 15px;
+    .product_body_price {
+        font-size: 14px !important;
     }
-
-    .about_us_btn span {
-        font-size: 11px;
-    }
-
 }
