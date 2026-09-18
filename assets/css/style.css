@@ -114,15 +114,15 @@ body {
     top: 0;
     left: 0;
     z-index: 1000;
-    transform: translateY(-100%);
-    transition-duration: 0.3s;
+    transform: translate3d(0, -100%, 0);
+    transition: transform 0.3s ease;
     width: 100%;
 
     box-shadow: 0 3px 15px rgba(0, 0, 0, 0.12);
 }
 
 .mini_nav.show {
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
 }
 
 .search_box_mini {
@@ -605,6 +605,7 @@ footer .footer_links_col {
 }
 
 @media (max-width: 575.98px) {
+    /* main nav  */
     .brand_name h1 {
         font-size: 24px;
         margin-bottom: 3px;
@@ -625,7 +626,7 @@ footer .footer_links_col {
     }
 
     .hero_content {
-        backdrop-filter: blur(4px);
+        backdrop-filter: blur(5px);
         border-radius: 8px;
         background-color: rgb(247, 243, 235, 0.5);
         padding: 20px;
@@ -710,29 +711,22 @@ footer .footer_links_col {
         font-size: 12px;
     }
 
+
     /* contact us  */
-    .contact_us_title {
-        font-size: 18px;
-    }
-
-    .contact_us_detail {
-        font-size: 12px;
-    }
-
-    .contact_us_item_title {
-        font-size: 14px;
-    }
-
-    .contact_us_item_detail {
-        font-size: 11px;
-    }
-
-    .contact_us_item_number {
-        font-size: 14px;
-    }
 
     .map iframe {
         height: 220px;
         width: 100%;
+    }
+
+
+    /* footer  */
+
+    .footer_icon{
+        font-size: 20px;
+    }
+    .footer_svg{
+        height: 20px;
+        width: 20px;
     }
 }
