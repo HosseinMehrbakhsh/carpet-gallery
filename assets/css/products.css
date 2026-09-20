@@ -270,6 +270,20 @@ body {
     background-color: rgb(247, 243, 235, 0.9);
 }
 
+/* contact us */
+.contact_us_phone {
+    border-radius: 40px;
+    border: 1px solid var(--gold);
+}
+
+.map iframe {
+    border-radius: 8px;
+}
+
+.map {
+    border: 2px solid hsl(40, 43%, 88%);
+    border-radius: 8px;
+}
 
 /* footer  */
 footer {
@@ -366,6 +380,15 @@ footer .footer_links_col {
         width: 47px;
     }
 
+    /* contact us  */
+    .contact_us_title {
+        font-size: 20px !important;
+    }
+
+    .contact_us_detail {
+        font-size: 14px !important;
+    }
+
     /* footer  */
     .footer_links_col:last-child {
         border-left: 0;
@@ -425,6 +448,13 @@ footer .footer_links_col {
         background-color: rgb(247, 243, 235, 0.6);
         backdrop-filter: blur(1px);
         transition-duration: 0.3s;
+    }
+
+    /* contact us  */
+
+    .map iframe {
+        height: 220px;
+        width: 100%;
     }
 
     /* footer  */
