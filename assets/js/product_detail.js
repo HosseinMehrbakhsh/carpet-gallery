@@ -27,6 +27,7 @@ const colorId = Number(params.get('color'));
 
 let selectedProduct = carpets.find((carpet) => (carpet.id == id))
 
+document.title=`${selectedProduct.title}`;
 
 showInfo();
 

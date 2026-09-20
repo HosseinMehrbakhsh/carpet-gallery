@@ -21,7 +21,7 @@ function showSpecialProducts() {
         const specialProduct = document.createElement('div');
         specialProduct.className = "col-6 col-xl-3";
         specialProduct.innerHTML = `
-            <a href="product_detail.html"
+            <a href="product_detail.html?id=${carpet.id}&color=${carpet.colors[0].colorId}"
                 class="product_card shadow-sm d-flex flex-column align-items-center justify-content-center">
                 <div class="product_head w-100">
                     <div
