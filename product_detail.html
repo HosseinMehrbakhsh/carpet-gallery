@@ -61,7 +61,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link text_gold fs-5" href="products.html">فرش ها</a>
+                            <a class="nav-link text-color-brown fs-5" href="products.html">فرش ها</a>
                         </li>
 
                         <li class="nav-item">
@@ -142,7 +142,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link nav_link_mini text-light fs-6" href="products.html">فرش ها</a>
+                            <a class="nav-link nav_link_mini text_gold fs-6" href="products.html">فرش ها</a>
                         </li>
 
                         <li class="nav-item">
@@ -198,56 +198,35 @@
                         <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">صفحه اصلی</a></li>
                         <li class="breadcrumb-item" aria-current="page"><a href="products.html"
                                 class="text-decoration-none">فرش ها</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">قالیچه هزارگل</li>
+                        <li class="breadcrumb-item active breadcrumb_title" aria-current="page">قالیچه هزارگل</li>
                     </ol>
                 </nav>
 
                 <!-- product  -->
-                <div class="row d-flex justify-content-between justify-content-lg-around py-4 g-md-0 g-4">
+                <div id="product_container"
+                    class="row is-loading d-flex justify-content-between justify-content-lg-around py-4 g-md-0 g-4">
                     <div class="col-12 col-md-5 col-lg-4 d-flex align-items-center justify-content-center">
                         <div class="product_img_container">
-                            <img src="assets/imgs/1.webp" width="90%" alt="">
+                            <img src="assets/imgs/1.webp" class="product_img" width="90%" alt="">
                         </div>
                     </div>
 
                     <div class="col-11 col-sm-10 col-md-6 col-lg-5 mx-auto mx-md-0">
                         <div class="d-flex flex-column h-100 justify-content-center align-items-start">
-                            <h3 class="fw-normal">قالیچه هزارگل مهربخش</h3>
+                            <h3 class="fw-normal product_title">قالیچه هزارگل مهربخش</h3>
 
                             <div class="py-3">سایز:
-                                <span class="ltr">130 × 200</span>
+                                <span class="ltr product_size">130 × 200</span>
                             </div>
 
                             <div class="color">
                                 <span>رنگ:</span>
-                                <div class="colors_container pt-2 d-flex flex-nowrap flex-lg-wrap gap-2">
-                                    <div
-                                        class="color_option color_option_active py-1 px-2 d-flex align-items-center gap-2">
-                                        <div class="color_option_preview p-2"></div>
-                                        <span class="color_option_name">نفتی</span>
-                                    </div>
-
-                                    <div class="color_option py-1 px-2 d-flex align-items-center gap-2">
-                                        <div class="color_option_preview p-2"></div>
-                                        <span class="color_option_name">نفتی</span>
-                                    </div>
-
-                                    <div class="color_option py-1 px-2 d-flex align-items-center gap-2">
-                                        <div class="color_option_preview p-2"></div>
-                                        <span class="color_option_name">نفتی</span>
-                                    </div>
-
-                                    <div class="color_option py-1 px-2 d-flex align-items-center gap-2">
-                                        <div class="color_option_preview p-2"></div>
-                                        <span class="color_option_name">نفتی</span>
-                                    </div>
-
-                                </div>
+                                <div class="colors_container pt-2 d-flex flex-nowrap flex-lg-wrap gap-2"></div>
                             </div>
 
                             <div class="pt-4 pb-1">
                                 موجودی:
-                                <span>1</span>
+                                <span class="stock">1</span>
                                 عدد
                             </div>
 
@@ -257,14 +236,14 @@
                             </span>
 
                             <div>
-                                <span class="ltr fs-4">1,400,000,000</span>
+                                <span class="ltr fs-4 product_price">1,400,000,000</span>
                                 تومان
                             </div>
 
                             <a href=""
                                 class="add_wishlist_btn col-9 col-xl-8 col-xxl-7 my-3 text-center mx-auto mx-md-0">افزودن
                                 به علاقه مندی ها</a>
-                            <a href="" class="call_btn col-9 col-xl-8 col-xxl-7 text-center mx-auto mx-md-0">
+                            <a href="#contact_us" class="call_btn col-9 col-xl-8 col-xxl-7 text-center mx-auto mx-md-0">
                                 <i class="bi bi-telephone telephone_icon text_gold pe-2"></i>
                                 تماس برای خرید
                             </a>
@@ -297,6 +276,88 @@
                             aria-labelledby="contact-tab" tabindex="0">Lorem ipsum dolor sit amet consectetur
                             adipisicing elit. Est sit eos voluptatibus soluta quae iusto non ea impedit facilis dicta
                             ducimus at, deleniti aliquid quam. Nemo atque possimus rerum odio.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- contact us -->
+        <section id="contact_us" class="contact_us mb-4 py-lg-4 ">
+            <div class="container">
+                <div
+                    class="row align-items-center justify-content-center justify-content-lg-between justify-content-xl-around g-sm-5 g-lg-0">
+                    <div class="col-12 col-sm-11 col-md-8 col-lg-6 col-xl-5">
+                        <div class="d-flex flex-column align-items-center justify-content-center">
+                            <span class="h4 contact_us_title">با ما در ارتباط باشید</span>
+                            <div class="line my-2 w-50"></div>
+                            <p class="contact_us_detail text-center lh-lg py-1 col-xl-10 col-xxl-9 mb-0 mb-lg-2"> برای
+                                مشاوره، استعلام قیمت، اطلاعات بیشتر یا هماهنگی
+                                بازدید می‌توانید از راه‌های ارتباطی زیر با ما در تماس باشید.</p>
+                        </div>
+
+                        <div class="row pt-4 g-4 mb-4 mb-sm-0">
+                            <div class="col-12 col-sm-6 d-flex align-items-center">
+                                <div class="d-flex align-items-center gap-3 gap-sm-4">
+                                    <div class="contact_us_phone p-2">
+                                        <i class="bi bi-whatsapp text_gold fs-4"></i>
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <span class="h6 contact_us_item_title">واتساپ / ایتا</span>
+                                        <span class="bold ltr contact_us_item_number">0912 153 5516</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-sm-6 d-flex align-items-center">
+                                <div class="d-flex align-items-center gap-4 ">
+                                    <div class="contact_us_phone p-2">
+                                        <i class="bi bi-telephone text_gold fs-4"></i>
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <span class="h6 contact_us_item_title">تلفن ثابت</span>
+                                        <span class="bold ltr contact_us_item_number">025 3775 7484</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-9 col-sm-6 d-flex align-items-center order-2 order-sm-1">
+                                <div class="d-flex align-items-center gap-4">
+                                    <div class="contact_us_phone p-2">
+                                        <i class="bi bi-geo-alt text_gold fs-4"></i>
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <span class="h6 contact_us_item_title">آدرس</span>
+                                        <span class="small lh-lg contact_us_item_detail">قم، خیابان 19 دی، پاساژ مهدیه،
+                                            طبقه فوقانی، پلاک 19،
+                                            تولیدی فرش
+                                            مهربخش</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-sm-6 d-flex align-items-center order-1 order-sm-2">
+                                <div class="d-flex align-items-center gap-4">
+                                    <div class="contact_us_phone p-2">
+                                        <i class="bi bi-clock text_gold fs-4"></i>
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <span class="h6 contact_us_detail_item">ساعات کاری</span>
+                                        <span class="small bold mb-1 contact_us_item_title">شنبه تا پنجشنبه</span>
+                                        <span class="small bold contact_us_item_detail">10:00 صبح تا 13:30 ظهر</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-9 col-md-8 col-lg-5 col-xl-4">
+                        <div class=" d-flex justify-content-center map p-2 p-lg-3">
+                            <iframe title="map-iframe"
+                                src="https://neshan.org/maps/iframe/places/61d1ba69313bbf83d821fd987650c64e#c34.646-50.887-20z-0p/34.6462736734398/50.88631746629694"
+                                width="450" height="280" allowFullScreen loading="lazy"></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -426,6 +487,7 @@
     </footer>
 
 
+    <script src="assets/js/carpets_data.js"></script>
     <script src="assets/js/product_detail.js"></script>
 </body>
 
