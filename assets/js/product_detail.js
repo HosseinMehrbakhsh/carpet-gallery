@@ -1,4 +1,5 @@
 const miniNav = document.querySelector('.mini_nav');
+const sidebarContainer = document.querySelector('.side_bar_container');
 const productContainer = document.getElementById('product_container');
 const breadcrumbTitle = document.querySelector('.breadcrumb_title');
 const productImg = document.querySelector('.product_img');
@@ -20,6 +21,81 @@ window.addEventListener('scroll', () => {
 });
 
 
+// side bar 
+function showSidebar() {
+    sidebarContainer.innerHTML = `
+        <div class="row h-100">
+            <div class="side_bar col-10 col-sm-7 col-md-6 d-flex flex-column align-items-start position-relative ps-4">
+
+                <!-- brand & logo -->
+                <div class="py-2">
+                    <div
+                        class=" d-flex align-items-center justify-content-start justify-content-sm-center justify-content-xl-start">
+                        <!-- logo -->
+                        <div class="logo">
+                            <img src="assets/imgs/logo.webp" width="60px" alt="">
+                        </div>
+
+                        <!-- band name -->
+                        <div class="brand_name ps-1 ps-sm-2 d-flex flex-column align-items-center">
+                            <h1 class="mb-sm-1">مهربخش</h1>
+                            <span class="small fw-semibold">فرش دستباف ابریشم قم</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- search box -->
+                <div class=" py-3">
+                    <div class="input-group d-flex justify-content-center">
+                        <input type="search" class="search_box_mini" placeholder="جستجو..">
+                        <button class="btn btn-light search_btn_mini">
+                            <i class="bi bi-search text_gold"></i>
+                        </button>
+                    </div>
+                </div>
+
+
+                <!-- nav links -->
+                <div class="">
+                    <ul class="list-unstyled nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link text_gold fs-5" href="index.html">صفحه اصلی</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-color-brown fs-5" href="products.html">فرش ها</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-color-brown fs-5" href="#about_us" onclick="closeSidebar()">درباره ما</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-color-brown fs-5" href="#contact_us" onclick="closeSidebar()">تماس با ما</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-color-brown fs-5" href="#" onclick="closeSidebar()">علاقه مندی ها</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <button class="btn btn-close position-absolute top-0 end-0 m-3 p-3" onclick="closeSidebar()"></button>
+            </div>
+        </div>
+    `;
+    sidebarContainer.classList.add('show');
+    setTimeout(() => {
+        sidebarContainer.setAttribute('style', 'backdrop-filter: brightness(0.5) blur(2px);');
+    }, 200)
+}
+
+function closeSidebar() {
+    sidebarContainer.classList.remove('show');
+    sidebarContainer.removeAttribute('style')
+}
+
+
 const params = new URLSearchParams(window.location.search);
 
 const id = params.get('id');
@@ -27,6 +103,7 @@ const colorId = Number(params.get('color'));
 
 let selectedProduct = carpets.find((carpet) => (carpet.id == id))
 
+document.title = `${selectedProduct.title}`;
 
 showInfo();
 
@@ -35,8 +112,8 @@ function showInfo() {
     productTitle.textContent = `${selectedProduct.title}`;
     productImg.src = selectedProduct.colors[colorId - 1].images[0];
     productSize.textContent = selectedProduct.size;
-    stock.textContent= selectedProduct.stock;
-    productPrice.textContent=selectedProduct.price.toLocaleString();
+    stock.textContent = selectedProduct.stock;
+    productPrice.textContent = selectedProduct.price.toLocaleString();
 
 
 
@@ -47,15 +124,15 @@ function showInfo() {
             <div class=" p-2 rounded-circle" style="background-color: ${color.colorEn};"></div>
            <span class="color_option_name">${color.color}</span>
         `;
-        colorEl.href=`product_detail.html?id=${id}&color=${color.colorId}`;
-        
-        if(colorEl.classList.contains(`color_${colorId}`)){
+        colorEl.href = `product_detail.html?id=${id}&color=${color.colorId}`;
+
+        if (colorEl.classList.contains(`color_${colorId}`)) {
             colorEl.classList.add('color_option_active');
         }
-        
+
         colorsContainer.append(colorEl);
     });
-    
+
 
     productImg.onload = () => {
         productContainer.classList.remove('is-loading');

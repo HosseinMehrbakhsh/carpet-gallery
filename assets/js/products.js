@@ -1,4 +1,5 @@
 const miniNav = document.querySelector('.mini_nav');
+const sidebarContainer = document.querySelector('.side_bar_container');
 const productsContainer = document.querySelector('.products_container_row');
 
 
@@ -13,6 +14,82 @@ window.addEventListener('scroll', () => {
     }
 });
 
+
+// side bar 
+function showSidebar() {
+    sidebarContainer.innerHTML = `
+        <div class="row h-100">
+            <div class="side_bar col-10 col-sm-7 col-md-6 d-flex flex-column align-items-start position-relative ps-4">
+
+                <!-- brand & logo -->
+                <div class="py-2">
+                    <div
+                        class=" d-flex align-items-center justify-content-start justify-content-sm-center justify-content-xl-start">
+                        <!-- logo -->
+                        <div class="logo">
+                            <img src="assets/imgs/logo.webp" width="60px" alt="">
+                        </div>
+
+                        <!-- band name -->
+                        <div class="brand_name ps-1 ps-sm-2 d-flex flex-column align-items-center">
+                            <h1 class="mb-sm-1">مهربخش</h1>
+                            <span class="small fw-semibold">فرش دستباف ابریشم قم</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- search box -->
+                <div class=" py-3">
+                    <div class="input-group d-flex justify-content-center">
+                        <input type="search" class="search_box_mini" placeholder="جستجو..">
+                        <button class="btn btn-light search_btn_mini">
+                            <i class="bi bi-search text_gold"></i>
+                        </button>
+                    </div>
+                </div>
+
+
+                <!-- nav links -->
+                <div class="">
+                    <ul class="list-unstyled nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link text_gold fs-5" href="index.html">صفحه اصلی</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-color-brown fs-5" href="products.html">فرش ها</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-color-brown fs-5" href="#about_us" onclick="closeSidebar()">درباره ما</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-color-brown fs-5" href="#contact_us" onclick="closeSidebar()">تماس با ما</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-color-brown fs-5" href="#" onclick="closeSidebar()">علاقه مندی ها</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <button class="btn btn-close position-absolute top-0 end-0 m-3 p-3" onclick="closeSidebar()"></button>
+            </div>
+        </div>
+    `;
+    sidebarContainer.classList.add('show');
+    setTimeout(() => {
+        sidebarContainer.setAttribute('style', 'backdrop-filter: brightness(0.5) blur(2px);');
+    }, 200)
+}
+
+function closeSidebar() {
+    sidebarContainer.classList.remove('show');
+    sidebarContainer.removeAttribute('style')
+}
+
+
 showProducts();
 
 function showProducts() {
@@ -20,7 +97,7 @@ function showProducts() {
         product.colors.forEach((color) => {
             let productEl = document.createElement('div');
             productEl.className = "col-12 col-sm-6 col-md-4 col-xl-3";
-            
+
             productEl.innerHTML = `
                 <a href="product_detail.html?id=${product.id}&color=${color.colorId}" class="product_card px-1 py-2 p-sm-0 shadow-sm d-flex flex-sm-column align-items-center justify-content-between justify-content-sm-center">
                     <div class="product_head col-4 col-sm-12">
@@ -46,7 +123,7 @@ function showProducts() {
                         </div>
                         <span
                             class="product_body_price d-block w-100 text-end text-sm-center fs-6 pt-4 pt-sm-2 fw-semibold">
-                            ${product.price}
+                            ${product.price.toLocaleString()}
                             تومان
                         </span>
                     </div>

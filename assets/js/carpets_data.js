@@ -27,7 +27,7 @@ const carpets = [
                 colorId:1,
                 color: "آبی آسمانی",
                 colorEn:"skyblue",
-                images: ["assets/imgs/carpets/zarnim1.2.jpg"]
+                images: ["assets/imgs/carpets/zarnim1.2.webp"]
             },
             {
                 colorId:2,

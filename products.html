@@ -32,7 +32,7 @@
         <div class="container-fluid">
             <div class="row d-flex align-items-center justify-content-between">
 
-                <div class="col-1 d-lg-none">
+                <div class="col-1 d-lg-none side_btn" onclick="showSidebar()">
                     <i class="bi bi-list fs-4"></i>
                 </div>
 
@@ -114,7 +114,7 @@
         <div class="container">
             <div class="row d-flex align-items-center justify-content-between">
 
-                <div class="col-1 d-lg-none">
+                <div class="col-1 d-lg-none side_btn_mini" onclick="showSidebar()">
                     <i class="bi bi-list fs-4"></i>
                 </div>
 
@@ -193,7 +193,12 @@
     <main>
         <section class="products_page">
             <div class="container-fluid">
-                <span class="d-block text-center pt-3 small opacity-75">صفحه اصلی / فرش ها</span>
+                <nav aria-label="breadcrumb" class="pt-3 offset-lg-2 ps-2">
+                    <ol class="breadcrumb m-0">
+                        <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">صفحه اصلی</a></li>
+                        <li class="breadcrumb-item active breadcrumb_title" aria-current="page">فرش ها</li>
+                    </ol>
+                </nav>
                 <div class="row px-2">
 
                     <!-- filter  -->
@@ -379,9 +384,9 @@
 
                         <div class="products_container w-100 pb-5 pt-2">
                             <div class="row products_container_row g-2 g-sm-4">
-                                
+
                                 <!-- products loaded here  -->
-                                
+
                             </div>
                         </div>
                     </div>
@@ -592,6 +597,10 @@
             <img src="assets/imgs/footer_background.webp" width="150px" alt="">
         </div>
     </footer>
+
+
+    <!-- side bar -->
+    <div class="side_bar_container position-fixed top-0 start-0 d-lg-none"></div>
 
 
     <script src="assets/js/carpets_data.js"></script>
