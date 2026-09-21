@@ -191,7 +191,14 @@ body {
 }
 
 
-/* products page  */
+/* filter  */
+#filterByPriceBtn {
+    background-color: var(--gold);
+    color: var(--primary-background);
+}
+#filterByPriceBtn:hover{
+    background-color: hsl(36, 47%, 43%);
+}
 
 .product_filter_title {
     border: 2px solid rgb(184, 138, 67, 0.1);

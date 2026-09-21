@@ -1,6 +1,12 @@
 const miniNav = document.querySelector('.mini_nav');
 const sidebarContainer = document.querySelector('.side_bar_container');
 const productsContainer = document.querySelector('.products_container_row');
+const filterSizeContainer = document.getElementById('filterBySize');
+const filterColorContainer = document.getElementById('filterByColor');
+const filterPriceBtn = document.getElementById('filterByPriceBtn');
+const minPriceEl = document.getElementById('minPrice');
+const maxPriceEl = document.getElementById('maxPrice');
+
 
 
 
@@ -139,5 +145,95 @@ function showProducts() {
             productsContainer.append(productEl);
         });
     });
+
+}
+
+
+
+let sizes = [];
+let colors = [];
+let prices = [];
+
+// selected sizes by user 
+filterSizeContainer.addEventListener('change', (e) => {
+    if (e.target.checked) {
+        sizes.push(e.target.value);
+    } else {
+        let indexRemove = sizes.indexOf(e.target.value);
+        sizes.splice(indexRemove, 1);
+
+    }
+
+    console.log(sizes);
+
+    filterProduct(sizes, colors ,prices);
+});
+
+
+// selected colors by user 
+filterColorContainer.addEventListener('change', (e) => {
+    if (e.target.checked) {
+        colors.push(e.target.value);
+    } else {
+        let indexRemove = colors.indexOf(e.target.value);
+        colors.splice(indexRemove, 1);
+    }
+    console.log(colors);
+    filterProduct(sizes, colors,prices)
+})
+
+
+// slected price by user 
+filterPriceBtn.addEventListener('click', () => {
+    prices[0] = Number(minPriceEl.value);
+    prices[1] = Number(maxPriceEl.value);
+
+    console.log(prices);
+    filterProduct(sizes, colors, prices);
+
+})
+
+
+function filterProduct(sizes, colors, prices) {
+    let filtered = carpets.filter((carpet) => {
+        let colorFlag = true;
+        let sizeFlag = true;
+        let priceFlag = true;
+
+        if (sizes.length > 0) {
+
+            sizeFlag = false;
+            sizes.forEach((size) => {
+                if (carpet.size === size) {
+                    sizeFlag = true;
+                }
+            });
+        }
+
+        if (colors.length > 0) {
+
+            colorFlag = false;
+            colors.forEach((color) => {
+                carpet.colors.forEach((colorData) => {
+                    if (colorData.colorEn === color) {
+                        colorFlag = true;
+                    }
+                })
+            });
+        }
+
+        if (prices[0] !== 0 && prices[1] !==0) {
+            priceFlag = false;
+            console.log(priceFlag);
+            
+            if (carpet.price >= prices[0] && carpet.price <= prices[1]){
+                priceFlag=true;
+            }
+        }
+
+
+        return sizeFlag && colorFlag && priceFlag;
+    })
+    console.log(filtered);
 
 }
