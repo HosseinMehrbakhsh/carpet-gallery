@@ -191,7 +191,18 @@ body {
 }
 
 
-/* products page  */
+/* filter  */
+.filterByPriceBtn {
+    background-color: var(--gold);
+    color: var(--primary-background) ;
+    border: 0;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.filterByPriceBtn:hover {
+    background-color: hsl(36, 47%, 43%);
+}
 
 .product_filter_title {
     border: 2px solid rgb(184, 138, 67, 0.1);
@@ -242,6 +253,12 @@ body {
 }
 
 /* products  */
+#sidebarFilter:hover {
+    cursor: pointer;
+    color: var(--gold);
+    transition-duration: 0.3s;
+}
+
 .products_box_header_item {
     border: 2px solid rgb(184, 138, 67, 0.1);
     border-radius: 5px;
@@ -297,6 +314,14 @@ body {
     background-color: rgb(247, 243, 235, 0.9);
 }
 
+.not_found{
+    background-color: var(--secondary-background);
+    border-radius: 5px;
+    border: 1px solid rgba(187, 139, 68, 0.15);
+    height: 400px;
+    text-align: center;
+    font-size: 24px;
+} 
 /* contact us */
 .contact_us_phone {
     border-radius: 40px;
@@ -386,6 +411,23 @@ footer .footer_links_col {
     background-color: var(--secondary-background);
 }
 
+.filterContainerSide {
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 2000;
+    height: 100vh;
+
+    transform: translate3d(200%, 0, 0);
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.filterContainerSide.show {
+    transform: translate3d(0, 0, 0);
+}
 
 
 /* ----------------responsive------------ */
