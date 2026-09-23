@@ -204,8 +204,10 @@
                     <!-- filter  -->
                     <div class="products_filter col-2 d-none d-lg-block">
 
-                        <div class="product_filter_title p-3 my-3 shadow-sm">
+                        <div
+                            class="product_filter_title p-3 my-3 shadow-sm d-flex justify-content-between align-items-center flex-wrap gap-2">
                             <span class="fw-semibold">فیلترها</span>
+                            <button class="small filterByPriceBtn p-1" onclick="removeFilters()">حذف فیلترها</button>
                         </div>
 
                         <div class="product_filter_item accordion mb-3 shadow-sm" id="filter_size">
@@ -220,7 +222,7 @@
                                 <div id="collapseSize" class="accordion-collapse collapse show"
                                     data-bs-parent="#filter_size">
                                     <div class="accordion-body">
-                                        <ul id="filterBySize" class="list-unstyled d-flex flex-column m-0">
+                                        <ul id="filterBySize" class="list-unstyled d-flex flex-column m-0 filterBySize">
                                             <li>
                                                 <div class="filter_size_link gap-3">
                                                     <input type="checkbox" value="60 x 90" id="size_poshti">
@@ -273,7 +275,8 @@
                                 <div id="collapseColor" class="accordion-collapse collapse show"
                                     data-bs-parent="#filter_color">
                                     <div class="accordion-body">
-                                        <ul class="list-unstyled d-flex flex-column m-0" id="filterByColor">
+                                        <ul class="list-unstyled d-flex flex-column m-0 filterByColor"
+                                            id="filterByColor">
                                             <li>
                                                 <div class="filter_color_link gap-3">
                                                     <input type="checkbox" value="skyblue" id="sky_blue">
@@ -337,7 +340,7 @@
                                                 </div>
                                             </li>
 
-                                            
+
                                         </ul>
                                     </div>
                                 </div>
@@ -357,22 +360,22 @@
                                     data-bs-parent="#filter_price">
                                     <div class="accordion-body">
                                         <div class="d-flex flex-column pb-4">
-                                            <label for="price_number" class="price_label">از</label>
-                                            <input class="py-2 col-12 col-xl-10 mx-auto" type="range"
-                                                id="price_range1">
+                                            <label for="minPrice" class="price_label">از</label>
+                                            <input class="py-2 col-12 col-xl-10 mx-auto" type="range" id="price_range1">
                                             <input class="col-12 col-xl-10 mx-auto price_number" type="number"
                                                 id="minPrice" placeholder="100,000,000" min="0">
                                         </div>
 
                                         <div class="d-flex flex-column ">
-                                            <label for="price_number" class="price_label">تا</label>
-                                            <input class="py-2 col-12 col-xl-10 mx-auto" type="range"
-                                                id="price_range2" min="0">
+                                            <label for="maxPrice" class="price_label">تا</label>
+                                            <input class="py-2 col-12 col-xl-10 mx-auto" type="range" id="price_range2"
+                                                min="0">
                                             <input class="col-12 col-xl-10 mx-auto price_number" type="number"
                                                 id="maxPrice" placeholder="3,000,000,000" min="0">
                                         </div>
 
-                                        <button id="filterByPriceBtn" class="btn w-100 mt-4">فیلتر قیمت</button>
+                                        <button id="filterByPriceBtn" class="filterByPriceBtn w-100 mt-4">فیلتر
+                                            قیمت</button>
                                     </div>
                                 </div>
                             </div>
@@ -382,7 +385,8 @@
                     <!-- products  -->
                     <div class="products_box col-12 col-lg-10">
                         <div class="products_box_header py-3 d-flex align-items-center">
-                            <div class="products_box_header_item shadow-sm me-3 d-block d-lg-none ">
+                            <div id="sidebarFilter" class="products_box_header_item shadow-sm me-3 d-block d-lg-none "
+                                onclick="showFilter()">
                                 <i class="bi bi-funnel"></i>
                                 <span>فیلتر</span>
                             </div>
@@ -397,7 +401,7 @@
                             <div class="row products_container_row g-2 g-sm-4">
 
                                 <!-- products loaded here  -->
-
+                                
                             </div>
                         </div>
                     </div>
@@ -612,6 +616,186 @@
 
     <!-- side bar -->
     <div class="side_bar_container position-fixed top-0 start-0 d-lg-none"></div>
+
+    <!-- filter side bar for mobile -->
+    <div class="filterContainerSide position-fixed d-lg-none">
+        <!-- filter-->
+        <div class="row">
+            <div class="side_bar col-10 col-sm-7 col-md-6 d-flex flex-column align-items-start position-relative ps-4">
+                <div
+                    class="col-10 product_filter_title p-3 my-3 shadow-sm d-flex justify-content-between align-items-center flex-wrap">
+                    <span class="fw-semibold">فیلترها</span>
+                    <button class="filterByPriceBtn" onclick="removeFilters() ;closeFilterSide()">حذف فیلترها</button>
+                </div>
+
+                <div class="col-10 product_filter_item accordion mb-3 shadow-sm" id="filter_size">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseSize" aria-expanded="true" aria-controls="collapseSize">
+                                سایز
+                            </button>
+                        </h2>
+                        <div id="collapseSize" class="accordion-collapse collapse show" data-bs-parent="#filter_size">
+                            <div class="accordion-body">
+                                <ul id="filterBySizeSide" class="list-unstyled d-flex flex-column m-0 filterBySize">
+                                    <li>
+                                        <div class="filter_size_link gap-3">
+                                            <input type="checkbox" value="60 x 90" id="size_poshti_side">
+                                            <label for="size_poshti_side" class="ltr">60 x 90</label>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="filter_size_link gap-3">
+                                            <input type="checkbox" value="80 x 120" id="size_zarcharak_side">
+                                            <label for="size_zarcharak_side" class="ltr">80 x 120</label>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="filter_size_link gap-3">
+                                            <input type="checkbox" value="100 x 150" id="size_zarnim_side">
+                                            <label for="size_zarnim_side" class="ltr">100 x 150</label>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="filter_size_link gap-3">
+                                            <input type="checkbox" value="130 x 200" id="size_ghaliche_side">
+                                            <label for="size_ghaliche_side" class="ltr">130 x 200</label>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="filter_size_link gap-3">
+                                            <input type="checkbox" value="200 x 300" id="size_6metri_side">
+                                            <label for="size_6metri_side" class="ltr">200 x 300</label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-10 product_filter_item accordion mb-3 shadow-sm" id="filter_color">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseColor" aria-expanded="true" aria-controls="collapseColor">
+                                رنگ زمینه
+                            </button>
+                        </h2>
+                        <div id="collapseColor" class="accordion-collapse collapse show" data-bs-parent="#filter_color">
+                            <div class="accordion-body">
+                                <ul class="list-unstyled d-flex flex-column m-0 filterByColor" id="filterByColorSide">
+                                    <li>
+                                        <div class="filter_color_link gap-3">
+                                            <input type="checkbox" value="skyblue" id="sky_blue_side">
+                                            <label for="sky_blue_side">آبی آسمانی</label>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="filter_color_link gap-3">
+                                            <input type="checkbox" value="darkcyan" id="zangari_blue_side">
+                                            <label for="zangari_blue_side">آبی زنگاری</label>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="filter_color_link gap-3">
+                                            <input type="checkbox" value="navy" id="navy_side">
+                                            <label for="navy_side">آبی نفتی</label>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="filter_color_link gap-3">
+                                            <input type="checkbox" value="dark_blue" id="dark_blue_side">
+                                            <label for="dark_blue_side">سرمه ای</label>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="filter_color_link gap-3">
+                                            <input type="checkbox" value="darkslategrey" id="dark_green_side">
+                                            <label for="dark_green_side">سبز سیر</label>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="filter_color_link gap-3">
+                                            <input type="checkbox" value="gray" id="gray_side">
+                                            <label for="gray_side">طوسی</label>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="filter_color_link gap-3">
+                                            <input type="checkbox" value="black" id="black_side">
+                                            <label for="black_side">مشکی</label>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="filter_color_link gap-3">
+                                            <input type="checkbox" value="dark-brown" id="dark_brown_side">
+                                            <label for="dark_brown_side">قهوه ای</label>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="filter_color_link gap-3">
+                                            <input type="checkbox" value="wheat" id="wheat_side">
+                                            <label for="wheat_side">کرمی</label>
+                                        </div>
+                                    </li>
+
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-10 product_filter_item accordion mb-3 shadow-sm" id="filter_price">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapsePrice" aria-expanded="true" aria-controls="collapsePrice">
+                                قیمت
+                            </button>
+                        </h2>
+                        <div id="collapsePrice" class="accordion-collapse collapse show" data-bs-parent="#filter_price">
+                            <div class="accordion-body">
+                                <div class="d-flex flex-column pb-4">
+                                    <label for="minPriceSide" class="price_label">از</label>
+                                    <input class="py-2 col-12 col-xl-10 mx-auto" type="range" id="price_range1">
+                                    <input class="col-12 col-xl-10 mx-auto price_number" type="number" id="minPriceSide"
+                                        placeholder="100,000,000" min="0">
+                                </div>
+
+                                <div class="d-flex flex-column ">
+                                    <label for="maxPriceSide" class="price_label">تا</label>
+                                    <input class="py-2 col-12 col-xl-10 mx-auto" type="range" id="price_range2" min="0">
+                                    <input class="col-12 col-xl-10 mx-auto price_number" type="number" id="maxPriceSide"
+                                        placeholder="3,000,000,000" min="0">
+                                </div>
+
+                                <button id="filterByPriceBtnSide" class="filterByPriceBtn w-100 mt-4">فیلتر
+                                    قیمت</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn btn-close position-absolute top-0 end-0 m-3 p-3"
+                    onclick="closeFilterSide()"></button>
+            </div>
+        </div>
+    </div>
 
 
     <script src="assets/js/carpets_data.js"></script>

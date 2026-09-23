@@ -6,6 +6,13 @@ const filterColorContainer = document.getElementById('filterByColor');
 const filterPriceBtn = document.getElementById('filterByPriceBtn');
 const minPriceEl = document.getElementById('minPrice');
 const maxPriceEl = document.getElementById('maxPrice');
+const filterContainerSide = document.querySelector('.filterContainerSide');
+const filterSizeContainerSide = document.getElementById('filterBySizeSide');
+const filterColorContainerSide = document.getElementById('filterByColorSide');
+const filterPriceBtnSide = document.getElementById('filterByPriceBtnSide');
+const minPriceElSide = document.getElementById('minPriceSide');
+const maxPriceElSide = document.getElementById('maxPriceSide');
+
 
 
 
@@ -59,11 +66,11 @@ function showSidebar() {
                 <div class="">
                     <ul class="list-unstyled nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link text_gold fs-5" href="index.html">صفحه اصلی</a>
+                            <a class="nav-link text-color-brown fs-5" href="index.html">صفحه اصلی</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link text-color-brown fs-5" href="products.html">فرش ها</a>
+                            <a class="nav-link text_gold fs-5" href="products.html">فرش ها</a>
                         </li>
 
                         <li class="nav-item">
@@ -92,19 +99,54 @@ function showSidebar() {
 
 function closeSidebar() {
     sidebarContainer.classList.remove('show');
-    sidebarContainer.removeAttribute('style')
+    sidebarContainer.removeAttribute('style');
+    sidebarContainer.innerHTML = '';
+}
+
+
+// filter in tablet and mobile
+function showFilter() {
+    filterContainerSide.classList.add('show');
+
+    setTimeout(() => {
+        filterContainerSide.setAttribute('style', 'backdrop-filter: brightness(0.5) blur(2px);');
+    }, 200);
+
+}
+function closeFilterSide() {
+    filterContainerSide.classList.remove('show');
+    filterContainerSide.removeAttribute('style');
 }
 
 
 showProducts();
 
-function showProducts() {
-    carpets.forEach((product) => {
-        product.colors.forEach((color) => {
-            let productEl = document.createElement('div');
-            productEl.className = "col-12 col-sm-6 col-md-4 col-xl-3";
+function showProducts(filtered, selectedColors = []) {
+    let products = [];
+    if (filtered) {
+        products = filtered;
+    } else {
+        products = carpets;
+    }
 
-            productEl.innerHTML = `
+
+    if (products.length > 0) {
+        products.forEach((product) => {
+
+            let colorsToShow = product.colors;
+
+            if (selectedColors.length > 0) {
+
+                colorsToShow = product.colors.filter((color) => {
+                    return selectedColors.includes(color.colorEn)
+                });
+            }
+
+            colorsToShow.forEach((color) => {
+                let productEl = document.createElement('div');
+                productEl.className = "col-12 col-sm-6 col-md-4 col-xl-3";
+
+                productEl.innerHTML = `
                 <a href="product_detail.html?id=${product.id}&color=${color.colorId}" class="product_card px-1 py-2 p-sm-0 shadow-sm d-flex flex-sm-column align-items-center justify-content-between justify-content-sm-center">
                     <div class="product_head col-4 col-sm-12">
                         <div
@@ -142,58 +184,126 @@ function showProducts() {
                     </button>
                 </a>
             `;
-            productsContainer.append(productEl);
+                productsContainer.append(productEl);
+            });
         });
-    });
+    }
+
+    else{
+        let notFoundEl= document.createElement('div');
+        notFoundEl.className="col-12 mx-auto";
+        notFoundEl.innerHTML=`
+            <div class="not_found d-flex align-items-center justify-content-center">
+                <span>محصولی یافت نشد!!</span>
+            </div>
+        `;
+        productsContainer.append(notFoundEl);
+    }
 
 }
 
 
 
+
+
+
+// selected sizes by user 
 let sizes = [];
 let colors = [];
 let prices = [];
 
-// selected sizes by user 
-filterSizeContainer.addEventListener('change', (e) => {
-    if (e.target.checked) {
-        sizes.push(e.target.value);
-    } else {
-        let indexRemove = sizes.indexOf(e.target.value);
-        sizes.splice(indexRemove, 1);
+// checks user have desktop or smaller device for show filter 
+if (window.innerWidth < 992) {
+    slectedFilterSide();
+} else {
+    slectedFilter();
+}
 
-    }
+function slectedFilter() {
+    filterSizeContainer.addEventListener('change', (e) => {
+        if (e.target.checked) {
+            sizes.push(e.target.value);
+        } else {
+            let indexRemove = sizes.indexOf(e.target.value);
+            if (indexRemove !== -1) {
+                sizes.splice(indexRemove, 1);
+            }
 
-    console.log(sizes);
+        }
 
-    filterProduct(sizes, colors ,prices);
-});
-
-
-// selected colors by user 
-filterColorContainer.addEventListener('change', (e) => {
-    if (e.target.checked) {
-        colors.push(e.target.value);
-    } else {
-        let indexRemove = colors.indexOf(e.target.value);
-        colors.splice(indexRemove, 1);
-    }
-    console.log(colors);
-    filterProduct(sizes, colors,prices)
-})
+        filterProduct(sizes, colors, prices);
+    });
 
 
-// slected price by user 
-filterPriceBtn.addEventListener('click', () => {
-    prices[0] = Number(minPriceEl.value);
-    prices[1] = Number(maxPriceEl.value);
+    // selected colors by user 
+    filterColorContainer.addEventListener('change', (e) => {
+        if (e.target.checked) {
+            colors.push(e.target.value);
+        } else {
+            let indexRemove = colors.indexOf(e.target.value);
+            if (indexRemove !== -1) {
+                colors.splice(indexRemove, 1);
+            }
+        }
 
-    console.log(prices);
-    filterProduct(sizes, colors, prices);
-
-})
+        filterProduct(sizes, colors, prices)
+    })
 
 
+    // slected price by user 
+    filterPriceBtn.addEventListener('click', () => {
+        prices[0] = Number(minPriceEl.value);
+        prices[1] = Number(maxPriceEl.value);
+
+        filterProduct(sizes, colors, prices);
+
+    })
+}
+
+function slectedFilterSide() {
+    filterSizeContainerSide.addEventListener('change', (e) => {
+        if (e.target.checked) {
+            sizes.push(e.target.value);
+        } else {
+            let indexRemove = sizes.indexOf(e.target.value);
+            if (indexRemove !== -1) {
+                sizes.splice(indexRemove, 1);
+            }
+
+        }
+
+        filterProduct(sizes, colors, prices);
+    });
+
+
+    // selected colors by user 
+    filterColorContainerSide.addEventListener('change', (e) => {
+        if (e.target.checked) {
+            colors.push(e.target.value);
+        } else {
+            let indexRemove = colors.indexOf(e.target.value);
+            if (indexRemove !== -1) {
+                colors.splice(indexRemove, 1);
+            }
+        }
+
+        filterProduct(sizes, colors, prices)
+    })
+
+
+    // slected price by user 
+    filterPriceBtnSide.addEventListener('click', () => {
+        prices[0] = Number(minPriceElSide.value);
+        prices[1] = Number(maxPriceElSide.value);
+
+        filterProduct(sizes, colors, prices);
+
+    })
+}
+
+
+
+// filter function 
 function filterProduct(sizes, colors, prices) {
     let filtered = carpets.filter((carpet) => {
         let colorFlag = true;
@@ -222,18 +332,50 @@ function filterProduct(sizes, colors, prices) {
             });
         }
 
-        if (prices[0] !== 0 && prices[1] !==0) {
+        if ((prices.length > 0) && ((prices[0] !== 0 && prices[1] !== 0))) {
+
             priceFlag = false;
-            console.log(priceFlag);
-            
-            if (carpet.price >= prices[0] && carpet.price <= prices[1]){
-                priceFlag=true;
+
+            if (carpet.price >= prices[0] && carpet.price <= prices[1]) {
+                priceFlag = true;
+            }
+        } else if ((prices[0] === 0 && prices[1] !== 0)) {
+
+            priceFlag = false;
+            if (carpet.price <= prices[1]) {
+                priceFlag = true;
+            }
+
+        } else if ((prices[0] !== 0 && prices[1] === 0)) {
+
+            priceFlag = false;
+            if (carpet.price >= prices[0]) {
+                priceFlag = true;
             }
         }
 
 
         return sizeFlag && colorFlag && priceFlag;
-    })
-    console.log(filtered);
+    });
+    productsContainer.innerHTML = '';
+    showProducts(filtered, colors);
+
+}
+
+// remove filters 
+function removeFilters() {
+    sizes = [];
+    colors = [];
+    prices = [];
+
+    document.querySelectorAll('.filterBySize input').forEach(input => {
+        input.checked = false;
+
+    });
+    document.querySelectorAll('.filterByColor input').forEach(input => {
+        input.checked = false;
+
+    });
+    filterProduct(sizes, colors, prices);
 
 }
