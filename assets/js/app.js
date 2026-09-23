@@ -1,6 +1,12 @@
 const miniNav = document.querySelector('.mini_nav');
 const specialProductsRow = document.querySelector('.special_products_row');
 const sidebarContainer = document.querySelector('.side_bar_container');
+const searchBtn = document.querySelector('.search_btn');
+const searchBox = document.querySelector('.search_box');
+const searchInput = document.querySelector('.search_input');
+
+
+
 
 // mini nav 
 window.addEventListener('scroll', () => {
@@ -138,3 +144,12 @@ function showSpecialProducts() {
         specialProductsRow.append(specialProduct);
     });
 }
+
+
+// search
+searchBox.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let searchValue = searchInput.value.trim();
+    window.location.href=`products.html?searchValue=${searchValue}`;
+    
+});

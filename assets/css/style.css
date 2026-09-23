@@ -71,7 +71,7 @@ body {
     color: var(--gold);
 }
 
-.search_box {
+.search_input {
     border: 1px solid hsl(0, 0%, 80%);
     height: 50px;
     width: 300px;
@@ -79,7 +79,7 @@ body {
     padding: 10px;
 }
 
-.search_box:focus {
+.search_input:focus {
     outline: 1px solid var(--gold);
 }
 
