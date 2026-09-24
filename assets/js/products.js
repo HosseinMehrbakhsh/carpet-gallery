@@ -475,15 +475,17 @@ function search(searchValue) {
 // search value comes form other pages 
 let params = new URLSearchParams(window.location.search);
 let searchValue = params.get('searchValue');
-let paramSize=[];
-paramSize.push(params.get('size'));
+let paramSize = [];
+if (params.get('size')) {
+    paramSize.push(params.get('size'));
+}
 
 window.history.replaceState({}, '', 'products.html');
 searchInput.value = searchValue;
 if (searchValue) {
     search(searchValue);
 }
-if(paramSize.length>0){
+if (paramSize.length > 0) {
     filterProduct(paramSize, colors, prices);
 }
 
