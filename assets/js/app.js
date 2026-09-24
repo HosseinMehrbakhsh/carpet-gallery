@@ -3,7 +3,11 @@ const specialProductsRow = document.querySelector('.special_products_row');
 const sidebarContainer = document.querySelector('.side_bar_container');
 const searchBtn = document.querySelector('.search_btn');
 const searchBox = document.querySelector('.search_box');
+const searchBoxMini = document.querySelector('.search_box_mini');
 const searchInput = document.querySelector('.search_input');
+const searchInputMini = document.querySelector('.search_input_mini');
+const searchIcon = document.querySelector('.search_icon');
+const searchIconMini = document.querySelector('.search_icon_mini');
 
 
 
@@ -44,12 +48,12 @@ function showSidebar() {
 
                 <!-- search box -->
                 <div class=" py-3">
-                    <div class="input-group d-flex justify-content-center">
-                        <input type="search" class="search_box_mini" placeholder="جستجو..">
-                        <button class="btn btn-light search_btn_mini">
+                    <form class="search_box_side input-group d-flex justify-content-center" onsubmit="getSearchValue(event)">
+                        <input type="search" class="search_input_side" placeholder="جستجو..">
+                        <button type="submit" class="btn btn-light search_btn_side">
                             <i class="bi bi-search text_gold"></i>
                         </button>
-                    </div>
+                    </form>
                 </div>
 
 
@@ -150,6 +154,27 @@ function showSpecialProducts() {
 searchBox.addEventListener('submit', (e) => {
     e.preventDefault();
     let searchValue = searchInput.value.trim();
-    window.location.href=`products.html?searchValue=${searchValue}`;
-    
+    window.location.href = `products.html?searchValue=${searchValue}`;
+});
+searchBoxMini.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let searchValue = searchInputMini.value.trim();
+    window.location.href = `products.html?searchValue=${searchValue}`;
+});
+// search value side bar 
+function getSearchValue(e) {
+    e.preventDefault();
+    let searchValue = document.querySelector('.search_input_side').value.trim();
+    window.location.href = `products.html?searchValue=${searchValue}`;
+}
+
+searchIcon.addEventListener('click', () => {
+    showSidebar();
+    let searchInputSide = document.querySelector('.search_input_side');
+    searchInputSide.focus();
+});
+searchIconMini.addEventListener('click', () => {
+    showSidebar();
+    let searchInputSide = document.querySelector('.search_input_side');
+    searchInputSide.focus();
 });

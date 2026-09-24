@@ -8,6 +8,13 @@ const productSize = document.querySelector('.product_size');
 const colorsContainer = document.querySelector('.colors_container');
 const stock = document.querySelector('.stock');
 const productPrice = document.querySelector('.product_price');
+const searchBox = document.querySelector('.search_box');
+const searchBoxMini = document.querySelector('.search_box_mini');
+const searchInput = document.querySelector('.search_input');
+const searchInputMini = document.querySelector('.search_input_mini');
+const searchIcon = document.querySelector('.search_icon');
+const searchIconMini = document.querySelector('.search_icon_mini');
+
 
 
 // mini nav 
@@ -46,12 +53,12 @@ function showSidebar() {
 
                 <!-- search box -->
                 <div class=" py-3">
-                    <div class="input-group d-flex justify-content-center">
-                        <input type="search" class="search_box_mini" placeholder="جستجو..">
-                        <button class="btn btn-light search_btn_mini">
+                    <form class="search_box_side input-group d-flex justify-content-center">
+                        <input type="search" class="search_input_side" placeholder="جستجو..">
+                        <button type="submit" class="btn btn-light search_btn_side">
                             <i class="bi bi-search text_gold"></i>
                         </button>
-                    </div>
+                    </form>
                 </div>
 
 
@@ -59,7 +66,7 @@ function showSidebar() {
                 <div class="">
                     <ul class="list-unstyled nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link text_gold fs-5" href="index.html">صفحه اصلی</a>
+                            <a class="nav-link text-color-brown fs-5" href="index.html">صفحه اصلی</a>
                         </li>
 
                         <li class="nav-item">
@@ -138,3 +145,29 @@ function showInfo() {
         productContainer.classList.remove('is-loading');
     };
 }
+
+
+// search
+searchBox.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let searchValue = searchInput.value.trim();
+    window.location.href = `products.html?searchValue=${searchValue}`;
+
+});
+searchBoxMini.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let searchValue = searchInputMini.value.trim();
+    window.location.href = `products.html?searchValue=${searchValue}`;
+
+});
+
+searchIcon.addEventListener('click', () => {
+    showSidebar();
+    let searchInputSide = document.querySelector('.search_input_side');
+    searchInputSide.focus();
+});
+searchIconMini.addEventListener('click', () => {
+    showSidebar();
+    let searchInputSide = document.querySelector('.search_input_side');
+    searchInputSide.focus();
+});

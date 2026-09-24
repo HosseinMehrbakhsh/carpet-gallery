@@ -144,7 +144,7 @@ body {
     transition-duration: 0.3s;
 }
 
-.search_box_mini {
+.search_input_mini {
     border: 1px solid hsl(0, 0%, 80%);
     height: 30px;
     width: 200px;
@@ -152,7 +152,7 @@ body {
     padding: 10px;
 }
 
-.search_box_mini:focus {
+.search_input_mini:focus {
     outline: 1px solid var(--gold);
 }
 
@@ -194,7 +194,7 @@ body {
 /* filter  */
 .filterByPriceBtn {
     background-color: var(--gold);
-    color: var(--primary-background) ;
+    color: var(--primary-background);
     border: 0;
     border-radius: 5px;
     padding: 10px;
@@ -314,14 +314,15 @@ body {
     background-color: rgb(247, 243, 235, 0.9);
 }
 
-.not_found{
+.not_found {
     background-color: var(--secondary-background);
     border-radius: 5px;
     border: 1px solid rgba(187, 139, 68, 0.15);
     height: 400px;
     text-align: center;
     font-size: 24px;
-} 
+}
+
 /* contact us */
 .contact_us_phone {
     border-radius: 40px;
@@ -429,15 +430,49 @@ footer .footer_links_col {
     transform: translate3d(0, 0, 0);
 }
 
+.search_input_side {
+    border: 1px solid hsl(0, 0%, 80%);
+    height: 30px;
+    width: 200px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.search_input_side:focus {
+    outline: 1px solid var(--gold);
+}
+
+.search_btn_side {
+    background-color: white;
+    border-color: hsl(0, 0%, 80%);
+    border-right: transparent;
+    border-radius: 10px;
+    transition-duration: 0.3s;
+}
+
+.search_btn_side:focus {
+    background-color: var(--hover-background);
+    outline: 1px solid var(--gold);
+    border: 1px solid hsl(0, 0%, 80%);
+    border-right: 0;
+}
 
 /* ----------------responsive------------ */
 @media (max-width: 1199.98px) {
+
+    /* main nav  */
     .filter_size_link {
         font-size: 14px;
     }
 
     .price_number {
         font-size: 12px;
+    }
+
+    /* side bar */
+    .search_input_side {
+        height: 50px;
+        width: 300px;
     }
 }
 
@@ -492,6 +527,12 @@ footer .footer_links_col {
 
     .footer_background2 {
         top: 20% !important;
+    }
+
+    /* side bar  */
+    .search_input_side {
+        height: 30px;
+        width: 200px;
     }
 }
 
