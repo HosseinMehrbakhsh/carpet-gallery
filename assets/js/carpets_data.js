@@ -88,4 +88,52 @@ const carpets = [
         price: 1400000000,
         stock:1
     },
+    {
+        id: 6,
+        title: "6 متری گلریز مهربخش",
+        design: "گلریز",
+        size: "200 x 300",
+        colors: [
+            {
+                colorId:1,
+                color: "آبی آسمانی",
+                colorEn:"skyblue",
+                images: ["assets/imgs/carpets/6metri.webp"]
+            }
+        ],
+        price: 3000000000,
+        stock:1
+    },
+    {
+        id: 7,
+        title: "60 در 90 هزارگل مهربخش",
+        design: "هزارگل",
+        size: "60 x 90",
+        colors: [
+            {
+                colorId:1,
+                color: "مشکی",
+                colorEn:"black",
+                images: ["assets/imgs/carpets/60in90.webp"]
+            }
+        ],
+        price: 2600000000,
+        stock:1
+    },
+    {
+        id: 8,
+        title: "زرع و چارک هزارگل مهربخش",
+        design: "هزارگل",
+        size: "80 x 120",
+        colors: [
+            {
+                colorId:1,
+                color: "سبز سیر",
+                colorEn:"darkslategrey",
+                images: ["assets/imgs/carpets/zarcharak1.webp"]
+            }
+        ],
+        price: 500000000,
+        stock:1
+    },
 ]
