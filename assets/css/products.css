@@ -61,6 +61,39 @@ body {
     color: var(--primary-background);
 }
 
+.icon_tooltip {
+    position: relative;
+}
+
+.icon_tooltip::after {
+    content: attr(data-tooltip);
+
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: var(--text-color);
+    color: #fff;
+
+    padding: 5px 9px;
+    border-radius: 5px;
+
+    font-size: 12px;
+    white-space: nowrap;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: 0.2s;
+}
+
+.icon_tooltip:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
 /* main nav */
 .side_btn {
     cursor: pointer;
