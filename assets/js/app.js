@@ -99,11 +99,27 @@ function closeSidebar() {
 
 let specialCarpet = [carpets[0], carpets[1], carpets[3], carpets[4]];
 
+// get wishlist from localStorage
+let wishProduct = [];
+if (window.localStorage.getItem('wishProduct')) {
+    wishProduct = JSON.parse(window.localStorage.getItem('wishProduct'));
+}
+
 showSpecialProducts();
 
 function showSpecialProducts() {
 
     specialCarpet.forEach((carpet) => {
+        let d_fill = 'd-none';
+        let d_notFill = 'd-block';
+
+        wishProduct.forEach((wish) => {
+            if ((wish.wishId == carpet.id) && (wish.wishColorId == carpet.colors[0].colorId)) {
+                d_fill = 'd-block';
+                d_notFill = 'd-none';
+            }
+        });
+
         const specialProduct = document.createElement('div');
         specialProduct.className = "col-6 col-xl-3 position-relative";
         specialProduct.innerHTML = `
@@ -138,10 +154,9 @@ function showSpecialProducts() {
             </a>
 
             <!-- wishlist icon -->
-            <button class="wishlist_icon_container border-0">
-                <i
-                    class="bi bi-suit-heart-fill text-danger fs-3 wishlist_icon_selected d-none"></i>
-                <i class="bi bi-suit-heart text-dark fs-3 wishlist_icon"></i>
+            <button class="wishlist_icon_container border-0" onclick="addOrRemoveWishlist(event,${carpet.id},${carpet.colors[0].colorId})">
+                <i class="bi bi-suit-heart-fill text-danger fs-3 wishlist_icon_selected addedWish icon_tooltip_products ${d_fill}" data-tooltip="حذف علاقه‌مندی"></i>
+                <i class="bi bi-suit-heart text-dark fs-3 wishlist_icon removedWish icon_tooltip_products ${d_notFill}" data-tooltip="افزودن به علاقه‌مندی‌ها"></i>
             </button>
         `;
         specialProductsRow.append(specialProduct);
@@ -177,3 +192,44 @@ searchIconMini.addEventListener('click', () => {
     let searchInputSide = document.querySelector('.search_input_side');
     searchInputSide.focus();
 });
+
+
+// wishlist 
+function addOrRemoveWishlist(event, id, colorId) {
+    let btn = event.currentTarget;
+    let addedWish = btn.querySelector('.addedWish');
+    let removedWish = btn.querySelector('.removedWish');
+    if (wishProduct.length > 0) {
+        let removed = false;
+        wishProduct.forEach(product => {
+            if ((product.wishId == id) && (product.wishColorId == colorId)) {
+                removeWishlist(id, colorId);
+                addedWish.classList.add('d-none');
+                removedWish.classList.remove('d-none');
+                removed = true;
+            }
+        });
+        if (!removed) {
+            addWishlist(id, colorId);
+            addedWish.classList.remove('d-none');
+            removedWish.classList.add('d-none');
+        }
+    }
+    else {
+        addWishlist(id, colorId);
+        addedWish.classList.remove('d-none');
+        removedWish.classList.add('d-none');
+    }
+
+}
+function addWishlist(id, colorId) {
+    wishProduct.push({ wishId: id, wishColorId: colorId })
+    window.localStorage.setItem('wishProduct', JSON.stringify(wishProduct));
+}
+
+function removeWishlist(id, colorId) {
+    wishProduct = wishProduct.filter(product => {
+        return !((product.wishId == id) && (product.wishColorId == colorId))
+    })
+    window.localStorage.setItem('wishProduct', JSON.stringify(wishProduct));
+}

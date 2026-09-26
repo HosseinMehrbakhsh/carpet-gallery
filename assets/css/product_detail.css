@@ -273,6 +273,23 @@ body {
     background-color: hsl(36, 47%, 40%);
 }
 
+.remove_wishlist_btn {
+    text-decoration: none;
+    color: var(--gold);
+    background-color: var(--secondary-background);
+    padding: 12px 18px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    border: 2px solid rgb(184, 138, 67, 0.8);
+    font-weight: 700;
+}
+
+.remove_wishlist_btn:hover {
+    color: var(--primary-background);
+    background-color: var(--gold);
+}
+
 
 .call_btn {
     text-decoration: none;
@@ -288,6 +305,7 @@ body {
 .call_btn:hover {
     border-color: rgb(184, 138, 67, 0.6);
     color: var(--text-color);
+    background-color: var(--secondary-background);
 }
 
 /* tab  */

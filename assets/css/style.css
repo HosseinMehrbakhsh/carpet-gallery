@@ -369,6 +369,39 @@ nav {
     background-color: rgb(247, 243, 235, 0.9);
 }
 
+.icon_tooltip_products {
+    position: relative;
+}
+
+.icon_tooltip_products::after {
+    content: attr(data-tooltip);
+
+    position: absolute;
+    z-index: 2;
+    bottom: 50%;
+    left: calc(100% + 10px);
+    transform: translateY(50%);
+
+    background: var(--dark-background);
+    color: #fff;
+
+    padding: 5px 9px;
+    border-radius: 5px;
+
+    font-size: 12px;
+    white-space: nowrap;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: 0.2s;
+}
+
+.icon_tooltip_products:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
 
 .carpet_features {
     background-color: var(--secondary-background);
