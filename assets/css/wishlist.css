@@ -51,6 +51,7 @@ body {
     content: attr(data-tooltip);
 
     position: absolute;
+    z-index: 2;
     top: calc(100% + 10px);
     left: 50%;
     transform: translateX(-50%);
@@ -240,7 +241,6 @@ body {
     text-decoration: none;
     border: 1px solid rgba(187, 139, 68, 0.15);
     transition-duration: 0.3s;
-    position: relative;
 }
 
 .product_card:hover {
@@ -268,7 +268,7 @@ body {
 .wishlist_icon_container {
     position: absolute;
     top: 10px;
-    left: 10px;
+    left: 20px;
     padding: 8px;
     border-radius: 40px;
     background-color: rgb(247, 243, 235, 0.6);
@@ -285,7 +285,7 @@ body {
     background-color: var(--secondary-background);
     border-radius: 5px;
     border: 1px solid rgba(187, 139, 68, 0.15);
-    height: 400px;
+    height: 60vh;
     text-align: center;
     font-size: 24px;
 }
@@ -518,6 +518,12 @@ footer .footer_links_col {
     .logo img {
         width: 45px;
     }
+
+    .icon_tooltip::after {
+        top: 100%;
+        left: 120%;
+    }
+
 
 
     /* products  */

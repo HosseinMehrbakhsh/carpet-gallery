@@ -69,11 +69,12 @@ body {
     content: attr(data-tooltip);
 
     position: absolute;
+    z-index: 2;
     top: calc(100% + 10px);
     left: 50%;
     transform: translateX(-50%);
 
-    background: var(--text-color);
+    background: var(--dark-background);
     color: #fff;
 
     padding: 5px 9px;
@@ -306,7 +307,6 @@ body {
     text-decoration: none;
     border: 1px solid rgba(187, 139, 68, 0.15);
     transition-duration: 0.3s;
-    position: relative;
 }
 
 .product_card:hover {
@@ -334,7 +334,7 @@ body {
 .wishlist_icon_container {
     position: absolute;
     top: 10px;
-    left: 10px;
+    left: 30px;
     padding: 8px;
     border-radius: 40px;
     background-color: rgb(247, 243, 235, 0.6);
@@ -584,6 +584,11 @@ footer .footer_links_col {
     .logo img {
         width: 45px;
     }
+
+    .icon_tooltip::after {
+        left: 100%;
+    }
+
 
 
     /* products  */

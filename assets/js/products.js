@@ -157,7 +157,7 @@ function showProducts(filtered, selectedColors = []) {
 
                 colorsToShow.forEach((color) => {
                     let productEl = document.createElement('div');
-                    productEl.className = "col-12 col-sm-6 col-md-4 col-xl-3";
+                    productEl.className = "col-12 col-sm-6 col-md-4 col-xl-3 position-relative";
 
                     productEl.innerHTML = `
                         <a href="product_detail.html?id=${product.id}&color=${color.colorId}" class="product_card px-1 py-2 p-sm-0 shadow-sm d-flex flex-sm-column align-items-center justify-content-between justify-content-sm-center">
@@ -188,14 +188,13 @@ function showProducts(filtered, selectedColors = []) {
                                     تومان
                                 </span>
                             </div>
-
-                            <!-- wishlist icon -->
-                            <button class="wishlist_icon_container border-0">
-                                <i
-                                    class="bi bi-suit-heart-fill text-danger fs-3 wishlist_icon_selected d-none"></i>
-                                <i class="bi bi-suit-heart text-dark fs-3 wishlist_icon"></i>
-                            </button>
                         </a>
+
+                        <!-- wishlist icon -->
+                        <button class="wishlist_icon_container border-0" onclick="addWishlist(${product.id},${color.colorId})">
+                            <i class="bi bi-suit-heart-fill text-danger fs-3 wishlist_icon_selected d-none"></i>
+                            <i class="bi bi-suit-heart text-dark fs-3 wishlist_icon"></i>
+                        </button>
                     `;
                     productsContainer.append(productEl);
 
@@ -489,3 +488,17 @@ if (paramSize.length > 0) {
     filterProduct(paramSize, colors, prices);
 }
 
+
+
+// wishlist 
+let wishProduct=[];
+if(window.localStorage.getItem('wishProduct')){
+    wishProduct=JSON.parse(window.localStorage.getItem('wishProduct'));
+}
+
+function addWishlist(id,colorId){
+    
+    wishProduct.push({wishId:id,wishColorId:colorId})
+    console.log(wishProduct);
+    window.localStorage.setItem('wishProduct',JSON.stringify(wishProduct));
+}

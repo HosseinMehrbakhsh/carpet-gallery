@@ -528,6 +528,10 @@ footer .footer_links_col {
         width: 45px;
     }
 
+    .icon_tooltip::after {
+        left: 100%;
+    }
+
     /* product  */
     .nav_btn {
         font-size: 18px !important;

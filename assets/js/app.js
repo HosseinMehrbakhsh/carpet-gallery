@@ -105,10 +105,10 @@ function showSpecialProducts() {
 
     specialCarpet.forEach((carpet) => {
         const specialProduct = document.createElement('div');
-        specialProduct.className = "col-6 col-xl-3";
+        specialProduct.className = "col-6 col-xl-3 position-relative";
         specialProduct.innerHTML = `
             <a href="product_detail.html?id=${carpet.id}&color=${carpet.colors[0].colorId}"
-                class="product_card shadow-sm d-flex flex-column align-items-center justify-content-center">
+                class="product_card shadow-sm d-flex flex-column align-items-center justify-content-between">
                 <div class="product_head w-100">
                     <div
                         class="product_img_container d-flex align-items-center justify-content-center">
@@ -135,15 +135,14 @@ function showSpecialProducts() {
                         تومان
                     </span>
                 </div>
-
-                <!-- wishlist icon -->
-                <button class="wishlist_icon_container border-0">
-                    <i
-                        class="bi bi-suit-heart-fill text-danger fs-3 wishlist_icon_selected d-none"></i>
-                    <i class="bi bi-suit-heart text-dark fs-3 wishlist_icon"></i>
-                </button>
-
             </a>
+
+            <!-- wishlist icon -->
+            <button class="wishlist_icon_container border-0">
+                <i
+                    class="bi bi-suit-heart-fill text-danger fs-3 wishlist_icon_selected d-none"></i>
+                <i class="bi bi-suit-heart text-dark fs-3 wishlist_icon"></i>
+            </button>
         `;
         specialProductsRow.append(specialProduct);
     });
