@@ -61,6 +61,40 @@ body {
     color: var(--primary-background);
 }
 
+.icon_tooltip {
+    position: relative;
+}
+
+.icon_tooltip::after {
+    content: attr(data-tooltip);
+
+    position: absolute;
+    z-index: 2;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: var(--dark-background);
+    color: #fff;
+
+    padding: 5px 9px;
+    border-radius: 5px;
+
+    font-size: 12px;
+    white-space: nowrap;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: 0.2s;
+}
+
+.icon_tooltip:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
 /* main nav */
 .side_btn {
     cursor: pointer;
@@ -273,7 +307,6 @@ body {
     text-decoration: none;
     border: 1px solid rgba(187, 139, 68, 0.15);
     transition-duration: 0.3s;
-    position: relative;
 }
 
 .product_card:hover {
@@ -301,7 +334,7 @@ body {
 .wishlist_icon_container {
     position: absolute;
     top: 10px;
-    left: 10px;
+    left: 30px;
     padding: 8px;
     border-radius: 40px;
     background-color: rgb(247, 243, 235, 0.6);
@@ -321,6 +354,40 @@ body {
     height: 400px;
     text-align: center;
     font-size: 24px;
+}
+
+.icon_tooltip_products {
+    position: relative;
+}
+
+.icon_tooltip_products::after {
+    content: attr(data-tooltip);
+
+    position: absolute;
+    z-index: 2;
+    bottom: 50%;
+    left: calc(100% + 10px);
+    transform: translateY(50%);
+
+    background: var(--dark-background);
+    color: #fff;
+
+    padding: 5px 9px;
+    border-radius: 5px;
+
+    font-size: 12px;
+    white-space: nowrap;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: 0.2s;
+}
+
+.icon_tooltip_products:hover::after {
+    opacity: 1;
+    visibility: visible;
 }
 
 /* contact us */
@@ -551,6 +618,11 @@ footer .footer_links_col {
     .logo img {
         width: 45px;
     }
+
+    .icon_tooltip::after {
+        left: 100%;
+    }
+
 
 
     /* products  */

@@ -24,8 +24,6 @@ const searchIconMini = document.querySelector('.search_icon_mini');
 
 
 
-
-
 // mini nav 
 window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
@@ -128,6 +126,13 @@ function closeFilterSide() {
 }
 
 
+// get wishlist from localStorage
+let wishProduct = [];
+if (window.localStorage.getItem('wishProduct')) {
+    wishProduct = JSON.parse(window.localStorage.getItem('wishProduct'));
+}
+
+
 showProducts();
 
 function showProducts(filtered, selectedColors = []) {
@@ -155,9 +160,20 @@ function showProducts(filtered, selectedColors = []) {
             if (colorsToShow.length > 0) {
                 haveColor = true;
 
+
                 colorsToShow.forEach((color) => {
+                    let d_fill = 'd-none';
+                    let d_notFill = 'd-block';
+
+                    wishProduct.forEach((wish) => {
+                        if ((wish.wishId == product.id) && (wish.wishColorId == color.colorId)) {
+                            d_fill = 'd-block';
+                            d_notFill = 'd-none';
+                        }
+                    });
+
                     let productEl = document.createElement('div');
-                    productEl.className = "col-12 col-sm-6 col-md-4 col-xl-3";
+                    productEl.className = "col-12 col-sm-6 col-md-4 col-xl-3 position-relative";
 
                     productEl.innerHTML = `
                         <a href="product_detail.html?id=${product.id}&color=${color.colorId}" class="product_card px-1 py-2 p-sm-0 shadow-sm d-flex flex-sm-column align-items-center justify-content-between justify-content-sm-center">
@@ -188,14 +204,13 @@ function showProducts(filtered, selectedColors = []) {
                                     تومان
                                 </span>
                             </div>
-
-                            <!-- wishlist icon -->
-                            <button class="wishlist_icon_container border-0">
-                                <i
-                                    class="bi bi-suit-heart-fill text-danger fs-3 wishlist_icon_selected d-none"></i>
-                                <i class="bi bi-suit-heart text-dark fs-3 wishlist_icon"></i>
-                            </button>
                         </a>
+
+                        <!-- wishlist icon -->
+                        <button class="wishlist_icon_container border-0" onclick="addOrRemoveWishlist(event,${product.id},${color.colorId})">
+                            <i class="bi bi-suit-heart-fill text-danger fs-3 wishlist_icon_selected addedWish icon_tooltip_products ${d_fill}" data-tooltip="حذف علاقه‌مندی"></i>
+                            <i class="bi bi-suit-heart text-dark fs-3 wishlist_icon removedWish icon_tooltip_products ${d_notFill}" data-tooltip="افزودن به علاقه‌مندی‌ها"></i>
+                        </button>
                     `;
                     productsContainer.append(productEl);
 
@@ -489,3 +504,45 @@ if (paramSize.length > 0) {
     filterProduct(paramSize, colors, prices);
 }
 
+
+
+// wishlist 
+
+function addOrRemoveWishlist(event, id, colorId) {
+    let btn = event.currentTarget;
+    let addedWish = btn.querySelector('.addedWish');
+    let removedWish = btn.querySelector('.removedWish');
+    if (wishProduct.length > 0) {
+        let removed = false;
+        wishProduct.forEach(product => {
+            if ((product.wishId == id) && (product.wishColorId == colorId)) {
+                removeWishlist(id, colorId);
+                addedWish.classList.add('d-none');
+                removedWish.classList.remove('d-none');
+                removed = true;
+            }
+        });
+        if (!removed) {
+            addWishlist(id, colorId);
+            addedWish.classList.remove('d-none');
+            removedWish.classList.add('d-none');
+        }
+    }
+    else {
+        addWishlist(id, colorId);
+        addedWish.classList.remove('d-none');
+        removedWish.classList.add('d-none');
+    }
+
+}
+function addWishlist(id, colorId) {
+    wishProduct.push({ wishId: id, wishColorId: colorId })
+    window.localStorage.setItem('wishProduct', JSON.stringify(wishProduct));
+}
+
+function removeWishlist(id, colorId) {
+    wishProduct = wishProduct.filter(product => {
+        return !((product.wishId == id) && (product.wishColorId == colorId))
+    })
+    window.localStorage.setItem('wishProduct', JSON.stringify(wishProduct));
+}

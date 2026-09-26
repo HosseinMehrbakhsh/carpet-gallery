@@ -14,6 +14,7 @@ const searchInput = document.querySelector('.search_input');
 const searchInputMini = document.querySelector('.search_input_mini');
 const searchIcon = document.querySelector('.search_icon');
 const searchIconMini = document.querySelector('.search_icon_mini');
+const addOrRemoveWish = document.getElementById('addOrRemoveWishlist');
 
 
 
@@ -112,18 +113,43 @@ let selectedProduct = carpets.find((carpet) => (carpet.id == id))
 
 document.title = `${selectedProduct.title}`;
 
+
+// get wishlist from localStorage
+let wishProduct = [];
+if (window.localStorage.getItem('wishProduct')) {
+    wishProduct = JSON.parse(window.localStorage.getItem('wishProduct'));
+}
+
+
+
+
 showInfo();
 
 function showInfo() {
+    let btnContent = 'افزودن به علاقه‌مندی‌ها';
+    let addWishBtnClass = 'add_wishlist_btn';
+    let removeWishBtnClass = 'remove_wishlist_btn';
+    wishProduct.forEach(product => {
+        if ((product.wishId == id) && (product.wishColorId == colorId)) {
+            btnContent = 'حذف از علاقه‌مندی‌ها';
+            addWishBtnClass = 'remove_wishlist_btn';
+            removeWishBtnClass = 'add_wishlist_btn';
+        }
+    });
+
+
     breadcrumbTitle.textContent = `${selectedProduct.title}`;
     productTitle.textContent = `${selectedProduct.title}`;
     productImg.src = selectedProduct.colors[colorId - 1].images[0];
     productSize.textContent = selectedProduct.size;
     stock.textContent = selectedProduct.stock;
     productPrice.textContent = selectedProduct.price.toLocaleString();
+    addOrRemoveWish.textContent = btnContent;
+    addOrRemoveWish.classList.add(addWishBtnClass);
+    addOrRemoveWish.classList.remove(removeWishBtnClass);
 
 
-
+    colorsContainer.innerHTML='';
     selectedProduct.colors.forEach((color) => {
         const colorEl = document.createElement('a');
         colorEl.className = `color_option color_${color.colorId} py-1 px-2 d-flex align-items-center gap-2`;
@@ -171,3 +197,42 @@ searchIconMini.addEventListener('click', () => {
     let searchInputSide = document.querySelector('.search_input_side');
     searchInputSide.focus();
 });
+
+
+
+addOrRemoveWish.addEventListener('click', addOrRemoveWishlist);
+
+// wishlist 
+function addOrRemoveWishlist() {
+
+    if (wishProduct.length > 0) {
+        let removed = false;
+        wishProduct.forEach(product => {
+            if ((product.wishId == id) && (product.wishColorId == colorId)) {
+                removeWishlist();
+
+                removed = true;
+            }
+        });
+        if (!removed) {
+            addWishlist();
+        }
+    }
+    else {
+        addWishlist();
+    }
+
+}
+function addWishlist() {
+    wishProduct.push({ wishId: id, wishColorId: colorId })
+    window.localStorage.setItem('wishProduct', JSON.stringify(wishProduct));
+    showInfo();
+}
+
+function removeWishlist() {
+    wishProduct = wishProduct.filter(product => {
+        return !((product.wishId == id) && (product.wishColorId == colorId));
+    });
+    window.localStorage.setItem('wishProduct', JSON.stringify(wishProduct));
+    showInfo();
+}
